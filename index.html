@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta
+      name="description"
+      content="Destiny C3 —Encounter God, Enjoy Community"
+    />
+    <title>Destiny C3 — Encounter God, Enjoy Community</title>
+
+    <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon/android-chrome-512x512.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="assets/favicon/site.webmanifest" />
+
+    <link href="vendor/fonts/dc3-fonts.css" rel="stylesheet" />
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="vendor/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/style.css?v=1.0.0" />
+  </head>
+  <body>
+    <!-- ============== NAVBAR ============== -->
+    <nav
+      id="mainNav"
+      class="navbar navbar-expand-lg navbar-dark fixed-top dc3-navbar"
+    >
+      <div class="container-fluid px-3 px-lg-5">
+        <a class="navbar-brand d-flex align-items-center" href="#home">
+          <span class="ms-2 brand-text">
+            Destiny C3
+          </span>
+        </a>
+
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#dc3Nav"
+          aria-controls="dc3Nav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="dc3Nav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="locations.html">Our Locations</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#connect">Connect</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#give">Give</a>
+            </li>
+            <li class="nav-item ms-lg-3">
+              <a class="btn btn-dc3 btn-sm px-3" href="#watch">
+                <i class="bi bi-play-fill"></i> Watch Live
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ============== HERO ============== -->
+    <header id="home" class="dc3-hero jarallax" data-jarallax data-speed="0.6">
+      <video
+        class="jarallax-video jarallax-img"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        poster="assets/bg/map/asia.png"
+      >
+        <source src="assets/bg/videos/place_holder_footage.mp4" type="video/mp4" />
+      </video>
+      <div class="dc3-hero__overlay"></div>
+
+      <div class="container dc3-hero__content text-center">
+        <img
+          src="assets/dc3_logo.png"
+          alt="Destiny C3"
+          class="hero-logo"
+          width="120"
+          height="120"
+        />
+        <h1 class="hero-title display-1 fw-bolder">
+            <span>Encounter God</span>
+            <br>
+            <span>Enjoy Community</span>
+        </h1>
+        <p class="hero-lead mx-auto mt-3">
+          Destiny C3 is a movement of churches and a family of believers passionate
+          about Jesus, people, and the nations.
+        </p>
+        <div class="hero-cta d-flex flex-column flex-sm-row justify-content-center gap-3 mt-4">
+          <a href="#watch" class="btn btn-dc3 btn-lg px-4">
+            <i class="bi bi-play-circle-fill me-2"></i>Join a Service Online
+          </a>
+          <a href="locations.html" class="btn btn-dc3 btn-lg px-4">
+            Find a Location
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============== FEATURE STRIP ============== -->
+    <section class="dc3-strip py-5">
+      <div class="container">
+        <div class="row text-center gy-4 align-items-center">
+          <a href="#watch" class="col-6 col-md-3 strip-item">
+            <i class="bi bi-broadcast strip-icon"></i>
+            <h6 class="mt-3 mb-1">Watch Online</h6>
+            <p class="small mb-0 text-muted-2">Sundays · 10:30 AM</p>
+          </a>
+          <a href="#connect" class="col-6 col-md-3 strip-item">
+            <i class="bi bi-people strip-icon"></i>
+            <h6 class="mt-3 mb-1">Connect Groups</h6>
+            <p class="small mb-0 text-muted-2">Life done together</p>
+          </a>
+          <a href="locations.html" class="col-6 col-md-3 strip-item">
+            <i class="bi bi-globe2 strip-icon"></i>
+            <h6 class="mt-3 mb-1">Locations</h6>
+            <p class="small mb-0 text-muted-2">Across the nations</p>
+          </a>
+          <a href="#give" class="col-6 col-md-3 strip-item">
+            <i class="bi bi-heart-fill strip-icon"></i>
+            <h6 class="mt-3 mb-1">Give</h6>
+            <p class="small mb-0 text-muted-2">Partner with us</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============== LOCATIONS TEASER ============== -->
+    <section class="dc3-locations-teaser py-6">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <p class="section-eyebrow">Find a Church Near You</p>
+            <h2 class="section-title display-4 fw-bold">
+              One family, <br class="d-none d-md-inline" />
+              <span class="text-accent">across the nations.</span>
+            </h2>
+            <p class="lead text-muted-2 mt-4">
+              From Kuala Lumpur to Hyderabad — Destiny C3 has campuses across
+              Malaysia, India, the Philippines and Thailand. Find a church near
+              you, meet the pastors, and join us this Sunday.
+            </p>
+            <a href="locations.html" class="btn btn-dc3 btn-lg mt-3 px-4">
+              View All Locations <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+          </div>
+          <div class="col-lg-6">
+            <div class="dc3-locations-teaser__grid">
+              <a href="locations.html#malaysia" class="dc3-locations-teaser__chip">
+                <span class="dc3-locations-teaser__chip-name">Malaysia</span>
+                <span class="dc3-locations-teaser__chip-count">6 churches</span>
+              </a>
+              <a href="locations.html#india" class="dc3-locations-teaser__chip">
+                <span class="dc3-locations-teaser__chip-name">India</span>
+                <span class="dc3-locations-teaser__chip-count">2 churches</span>
+              </a>
+              <a href="locations.html#thailand" class="dc3-locations-teaser__chip">
+                <span class="dc3-locations-teaser__chip-name">Thailand</span>
+                <span class="dc3-locations-teaser__chip-count">1 church</span>
+              </a>
+              <a href="locations.html#philippines" class="dc3-locations-teaser__chip">
+                <span class="dc3-locations-teaser__chip-name">Philippines</span>
+                <span class="dc3-locations-teaser__chip-count">1 church</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== JOIN FROM ANYWHERE ============== -->
+    <section class="dc3-watch py-6" id="watch">
+      <div class="container-fluid dc3-watch__container">
+        <div class="row align-items-center g-5 gx-lg-6">
+          <div class="col-lg-5 offset-lg-1 dc3-watch__copy">
+            <h2 class="section-title display-4 fw-bold">
+              Join us from anywhere <br class="d-none d-md-inline" />
+              around the world
+            </h2>
+            <p class="lead mt-4 text-muted-2">
+              We have weekly services that are available on our YouTube channel
+              every Sunday from 10:15 AM (GMT+8) and we would love for you to join
+              us! Click the button below to find out more!
+            </p>
+            <a
+              href="https://www.youtube.com/@destinyc3"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-youtube btn-lg mt-3"
+            >
+              <i class="bi bi-youtube me-2"></i>Watch on YouTube
+            </a>
+          </div>
+
+          <div class="col-lg-6 dc3-watch__media">
+            <img
+              src="assets/bg/img/youtube_mockup.png"
+              alt="Destiny C3 YouTube channel shown on a laptop"
+              class="dc3-watch__mockup"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== CONNECT CTA ============== -->
+    <section id="connect" class="dc3-connect py-6">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <p class="section-eyebrow">We'd love to meet you</p>
+            <h2 class="section-title display-4 fw-bold">
+              Take your <span class="text-accent">next step</span>.
+            </h2>
+            <p class="lead mt-3 text-muted-2">
+              Whether you're brand new, looking to connect, or ready to serve — we'd
+              love to hear from you. Fill out the form and our team will be in touch.
+            </p>
+            <ul class="list-unstyled mt-4 connect-perks">
+              <li><i class="bi bi-check-circle-fill text-accent me-2"></i>Connect with our team</li>
+              <li><i class="bi bi-check-circle-fill text-accent me-2"></i>Find a Connect Group near you</li>
+              <li><i class="bi bi-check-circle-fill text-accent me-2"></i>Hear about upcoming events</li>
+            </ul>
+          </div>
+          <div class="col-lg-6">
+            <form
+              class="dc3-form p-4 p-md-5"
+              novalidate
+              onsubmit="event.preventDefault(); this.reset(); document.getElementById('formStatus').classList.remove('d-none');"
+            >
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="firstName" class="form-label">First Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="firstName"
+                    maxlength="50"
+                    required
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="lastName" class="form-label">Last Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="lastName"
+                    maxlength="50"
+                    required
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="email" class="form-label">Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    maxlength="120"
+                    required
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="phone" class="form-label">Mobile Phone</label>
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="phone"
+                    inputmode="tel"
+                    pattern="[0-9+\-\s()]{6,20}"
+                    maxlength="20"
+                  />
+                </div>
+                <div class="col-12">
+                  <label for="message" class="form-label">How can we help?</label>
+                  <textarea
+                    class="form-control"
+                    id="message"
+                    rows="3"
+                    maxlength="1000"
+                  ></textarea>
+                </div>
+                <div class="col-12 d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-2">
+                  <small class="text-muted-2">
+                    By submitting, you agree to our privacy policy.
+                  </small>
+                  <button type="submit" class="btn btn-dc3 px-4">
+                    Send Message <i class="bi bi-arrow-right ms-1"></i>
+                  </button>
+                </div>
+                <div
+                  id="formStatus"
+                  class="alert alert-success mt-2 d-none"
+                  role="alert"
+                >
+                  Thanks! We'll be in touch shortly.
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== FOOTER ============== -->
+    <footer class="dc3-footer pt-6 pb-4">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4">
+            <a href="#home" class="d-inline-flex align-items-center text-decoration-none">
+              <img src="assets/dc3_logo.png" alt="Destiny C3" width="56" height="56" />
+              <span class="ms-2 brand-text fs-4 text-white">
+                Destiny <span class="brand-text--accent">C3</span>
+              </span>
+            </a>
+            <p class="mt-3 text-muted-2 small">
+              A great church for every nation. Building God's house, raising God's
+              people, and reaching God's world.
+            </p>
+            <div class="footer-socials mt-3">
+              <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+              <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" aria-label="Spotify"><i class="bi bi-spotify"></i></a>
+            </div>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <h6 class="footer-heading">About</h6>
+            <ul class="list-unstyled footer-links">
+              <li><a href="about.html">Our Story</a></li>
+              <li><a href="about.html">We Believe</a></li>
+              <li><a href="about.html">Our Team</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <h6 class="footer-heading">Connect</h6>
+            <ul class="list-unstyled footer-links">
+              <li><a href="#connect">Get Connected</a></li>
+              <li><a href="#connect">Connect Groups</a></li>
+              <li><a href="#connect">Volunteer</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <h6 class="footer-heading">Media</h6>
+            <ul class="list-unstyled footer-links">
+              <li><a href="#watch">Watch Live</a></li>
+              <li><a href="#watch">Music</a></li>
+              <li><a href="#watch">Podcast</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <h6 class="footer-heading">Give</h6>
+            <ul class="list-unstyled footer-links">
+              <li><a href="#give">Give Online</a></li>
+              <li><a href="#give">Missions</a></li>
+              <li><a href="#give">Partner</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <hr class="footer-divider" />
+
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-muted-2 small">
+          <span>&copy; <span id="year"></span> Destiny C3. All rights reserved.</span>
+          <span>Privacy Notice · Terms</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="vendor/jarallax/jarallax.min.js"></script>
+    <script src="vendor/jarallax/jarallax-video.min.js"></script>
+
+    <script src="js/main.js?v=1.0.0"></script>
+  </body>
+</html>

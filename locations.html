@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta
+      name="description"
+      content="Find a Destiny C3 church near you across Malaysia, India, the Philippines and Thailand."
+    />
+    <title>Our Locations · Destiny C3</title>
+
+    <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon/android-chrome-512x512.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="assets/favicon/site.webmanifest" />
+
+    <link href="vendor/fonts/dc3-fonts.css" rel="stylesheet" />
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="vendor/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/style.css?v=1.0.0" />
+  </head>
+  <body class="dc3-page">
+    <!-- ============== NAVBAR ============== -->
+    <nav
+      id="mainNav"
+      class="navbar navbar-expand-lg navbar-dark fixed-top dc3-navbar"
+    >
+      <div class="container-fluid px-3 px-lg-5">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <span class="ms-2 brand-text">Destiny C3</span>
+        </a>
+
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#dc3Nav"
+          aria-controls="dc3Nav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="dc3Nav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="locations.html">Our Locations</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#connect">Connect</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#give">Give</a>
+            </li>
+            <li class="nav-item ms-lg-3">
+              <a class="btn btn-dc3 btn-sm px-3" href="index.html#watch">
+                <i class="bi bi-play-fill"></i> Watch Live
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ============== PAGE HERO ============== -->
+    <header class="dc3-page-hero jarallax" data-jarallax data-speed="0.3">
+      <img class="jarallax-img" src="assets/bg/map/asia.png" alt="" />
+      <div class="dc3-section__overlay"></div>
+      <div class="container position-relative">
+        <div class="row justify-content-center">
+          <div class="col-lg-9 text-center">
+            <p class="section-eyebrow">Find a Church Near You</p>
+            <h1 class="section-title display-2 fw-bold">
+              Our <span class="text-accent">locations</span> across Asia.
+            </h1>
+            <p class="lead mt-4 fw-light text-muted-2 mx-auto" style="max-width: 720px">
+              From Kuala Lumpur to Hyderabad — Destiny C3 is one family with
+              campuses across Malaysia, India, the Philippines and Thailand.
+              Choose a country to see the churches near you.
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============== LOCATIONS EXPLORER ============== -->
+    <section id="locations" class="dc3-locations-page py-6">
+      <div
+        class="container dc3-locations__grid"
+        data-active-region="malaysia"
+      >
+        <!-- Map + country selector -->
+        <div class="row align-items-start g-5">
+          <div class="col-lg-7">
+            <div class="dc3-map-stack">
+              <img
+                class="dc3-map-stack__base"
+                src="assets/bg/map/asia.png"
+                alt="Map of Asia showing Destiny C3 locations"
+              />
+              <img
+                class="dc3-map-stack__overlay"
+                data-region="malaysia"
+                src="assets/bg/map/malaysia.png"
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+              />
+              <img
+                class="dc3-map-stack__overlay"
+                data-region="india"
+                src="assets/bg/map/india.png"
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+              />
+              <img
+                class="dc3-map-stack__overlay"
+                data-region="philippines"
+                src="assets/bg/map/philippines.png"
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+              />
+              <img
+                class="dc3-map-stack__overlay"
+                data-region="thailand"
+                src="assets/bg/map/thailand.png"
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <p class="section-eyebrow mb-3">Pick a Country</p>
+            <ul class="dc3-country-list" role="list" data-country-list></ul>
+          </div>
+        </div>
+
+        <!-- Selected country detail header -->
+        <div class="dc3-region-summary mt-6" data-region-summary>
+          <div class="dc3-region-summary__head">
+            <div>
+              <p class="section-eyebrow mb-2" data-region-eyebrow>Churches in</p>
+              <h2 class="section-title display-4 fw-bold mb-0" data-region-title>
+                Malaysia
+              </h2>
+            </div>
+            <span class="dc3-region-summary__count" data-region-count>
+              0 churches
+            </span>
+          </div>
+        </div>
+
+        <!-- Church cards grid -->
+        <div
+          class="dc3-church-grid mt-4"
+          data-church-grid
+          aria-live="polite"
+        ></div>
+
+        <!-- Empty state (hidden by default) -->
+        <div class="dc3-church-empty d-none" data-church-empty>
+          <i class="bi bi-geo-alt"></i>
+          <p class="mb-0">
+            No churches listed yet for this region. Check back soon!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== FOOTER ============== -->
+    <footer class="dc3-footer pt-6 pb-4">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4">
+            <a href="index.html" class="d-inline-flex align-items-center text-decoration-none">
+              <img src="assets/dc3_logo.png" alt="Destiny C3" width="56" height="56" />
+              <span class="ms-2 brand-text fs-4 text-white">
+                Destiny <span class="brand-text--accent">C3</span>
+              </span>
+            </a>
+            <p class="mt-3 text-muted-2 small">
+              A great church for every nation. Building God's house, raising God's
+              people, and reaching God's world.
+            </p>
+            <div class="footer-socials mt-3">
+              <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+              <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" aria-label="Spotify"><i class="bi bi-spotify"></i></a>
+            </div>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <h6 class="footer-heading">About</h6>
+            <ul class="list-unstyled footer-links">
+              <li><a href="about.html">Our Story</a></li>
+              <li><a href="about.html">We Believe</a></li>
+              <li><a href="about.html">Our Team</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <h6 class="footer-heading">Connect</h6>
+            <ul class="list-unstyled footer-links">
+              <li><a href="index.html#connect">Get Connected</a></li>
+              <li><a href="index.html#connect">Connect Groups</a></li>
+              <li><a href="index.html#connect">Volunteer</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <h6 class="footer-heading">Media</h6>
+            <ul class="list-unstyled footer-links">
+              <li><a href="index.html#watch">Watch Live</a></li>
+              <li><a href="index.html#watch">Music</a></li>
+              <li><a href="index.html#watch">Podcast</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-lg-2">
+            <h6 class="footer-heading">Give</h6>
+            <ul class="list-unstyled footer-links">
+              <li><a href="index.html#give">Give Online</a></li>
+              <li><a href="index.html#give">Missions</a></li>
+              <li><a href="index.html#give">Partner</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <hr class="footer-divider" />
+
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-muted-2 small">
+          <span>&copy; <span id="year"></span> Destiny C3. All rights reserved.</span>
+          <span>Privacy Notice · Terms</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="vendor/jarallax/jarallax.min.js"></script>
+    <script src="vendor/jarallax/jarallax-video.min.js"></script>
+
+    <script src="js/locations-data.js?v=1.0.0"></script>
+    <script src="js/main.js?v=1.0.0"></script>
+  </body>
+</html>
