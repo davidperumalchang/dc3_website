@@ -18,7 +18,11 @@ window.DC3_LOCATIONS = {
           address:
             "S02-06, S02-07, S02-08, Impian Meridian, USJ 1, Jalan Subang 1, 47500 Subang Jaya",
           city: "Subang Jaya, Selangor",
-          serviceTimes: ["Sundays · 10:30 AM"]
+          serviceTimes: ["Sundays · 10:30 AM"],
+          socials: {
+            facebook: "https://www.facebook.com/destinyc3church/",
+            instagram: "https://www.instagram.com/destinyc3/"
+          }
         },
         {
           name: "Destiny C3 Chinatown KL",
@@ -27,7 +31,11 @@ window.DC3_LOCATIONS = {
           address:
             "Level 15, Kompleks Selangor, 51 Jalan Sultan, City Centre, 50000 Kuala Lumpur",
           city: "Kuala Lumpur",
-          serviceTimes: []
+          serviceTimes: [],
+          socials: {
+            facebook: "https://www.facebook.com/destinyc3church/",
+            instagram: "https://www.instagram.com/destinyc3/"
+          }
         },
         {
           name: "Destiny C3 Shah Alam",
@@ -35,7 +43,11 @@ window.DC3_LOCATIONS = {
           pastors: ["Dale Padman", "Naveen Neethan"],
           address: "24-1 Jalan Kristal AR7/AR, Seksyen 7, Shah Alam",
           city: "Shah Alam, Selangor",
-          serviceTimes: []
+          serviceTimes: [],
+          socials: {
+            facebook: "https://www.facebook.com/destinyc3church/",
+            instagram: "https://www.instagram.com/destinyc3/"
+          }
         },
         {
           name: "Destiny C3 Bukit Beruntung",
@@ -44,7 +56,11 @@ window.DC3_LOCATIONS = {
           address:
             "No 4, Jalan 1B/2, Sek BB4, Bandar Bukit Beruntung, 48300 Rawang, Selangor",
           city: "Bukit Beruntung / Rawang, Selangor",
-          serviceTimes: []
+          serviceTimes: [],
+          socials: {
+            facebook: "https://www.facebook.com/destinyc3church/",
+            instagram: "https://www.instagram.com/destinyc3/"
+          }
         },
         {
           name: "Destiny C3 Kuala Lumpur (Filipino)",
@@ -53,7 +69,11 @@ window.DC3_LOCATIONS = {
           address:
             "Level 14, Kompleks Selangor, 51 Jalan Sultan, City Centre, 50000 Kuala Lumpur",
           city: "Kuala Lumpur",
-          serviceTimes: []
+          serviceTimes: [],
+          socials: {
+            facebook: "https://www.facebook.com/destinyc3church/",
+            instagram: "https://www.instagram.com/destinyc3/"
+          }
         },
         {
           name: "Destiny C3 Bera",
@@ -62,7 +82,11 @@ window.DC3_LOCATIONS = {
           address:
             "No 11, Taman Meranti Jaya 1, 28200 Triang, Bera, Pahang",
           city: "Triang, Bera, Pahang",
-          serviceTimes: []
+          serviceTimes: [],
+          socials: {
+            facebook: "https://www.facebook.com/destinyc3church/",
+            instagram: "https://www.instagram.com/destinyc3/"
+          }
         }
       ]
     },
@@ -78,7 +102,11 @@ window.DC3_LOCATIONS = {
           address:
             "A Wing, 1st Floor, Ruah Complex, Doddagubi Main Road, Visthar, 560077",
           city: "Bangalore, Karnataka",
-          serviceTimes: []
+          serviceTimes: [],
+          socials: {
+            facebook: "https://www.facebook.com/dc3india/",
+            instagram: "https://www.instagram.com/dc3india/"
+          }
         },
         {
           name: "Destiny C3 Hyderabad",
@@ -87,7 +115,11 @@ window.DC3_LOCATIONS = {
           address:
             "58 Godhumakunta, Near IMA Campus, Medchal, Hyderabad, 501301",
           city: "Hyderabad, Telangana",
-          serviceTimes: []
+          serviceTimes: [],
+          socials: {
+            facebook: "https://www.facebook.com/dc3india/",
+            instagram: "https://www.instagram.com/dc3india/"
+          }
         }
       ]
     },
@@ -103,7 +135,11 @@ window.DC3_LOCATIONS = {
           address:
             "Purok 3, Jose Abadsantos, Catarman, Northern Samar, Philippines 6400",
           city: "Catarman, Northern Samar",
-          serviceTimes: []
+          serviceTimes: [],
+          socials: {
+            facebook: "https://www.facebook.com/destinyc3church/",
+            instagram: "https://www.instagram.com/destinyc3/"
+          }
         }
       ]
     },
@@ -119,7 +155,11 @@ window.DC3_LOCATIONS = {
           address:
             "80/16 Soi 3A, Loi Kroh Road, Chang Khlan, Chiang Mai 50100",
           city: "Chiang Mai",
-          serviceTimes: []
+          serviceTimes: [],
+          socials: {
+            facebook: "https://www.facebook.com/destinyc3church/",
+            instagram: "https://www.instagram.com/destinyc3/"
+          }
         }
       ]
     }

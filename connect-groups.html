@@ -6,9 +6,9 @@
     <meta name="theme-color" content="#ffffff" />
     <meta
       name="description"
-      content="Find a Destiny C3 church near you across Malaysia, India, the Philippines and Thailand."
+      content="Find a Destiny C3 Connect Group near you — life done together across Malaysia, India, the Philippines and Thailand."
     />
-    <title>Our Locations · Destiny C3</title>
+    <title>Connect Groups · Destiny C3</title>
 
     <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico" />
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png" />
@@ -19,15 +19,11 @@
     <link rel="manifest" href="assets/favicon/site.webmanifest" />
 
     <link href="vendor/fonts/dc3-fonts.css" rel="stylesheet" />
-
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-
     <link href="vendor/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
-
     <link rel="stylesheet" href="css/style.css?v=1.0.0" />
   </head>
   <body class="dc3-page">
-    <!-- ============== NAVBAR ============== -->
     <nav
       id="mainNav"
       class="navbar navbar-expand-lg navbar-dark fixed-top dc3-navbar"
@@ -58,11 +54,11 @@
               <a class="nav-link" href="about.html">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="locations.html">Our Locations</a>
+              <a class="nav-link" href="locations.html">Our Locations</a>
             </li>
             <li class="nav-item dropdown dropdown-hover">
               <a
-                class="nav-link dropdown-toggle"
+                class="nav-link dropdown-toggle active"
                 href="#"
                 id="connectNavDropdown"
                 role="button"
@@ -72,7 +68,11 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="connectNavDropdown">
                 <li><a class="dropdown-item" href="index.html#connect">Get Connected</a></li>
-                <li><a class="dropdown-item" href="connect-groups.html">Connect Groups</a></li>
+                <li>
+                  <a class="dropdown-item active" aria-current="page" href="connect-groups.html">
+                    Connect Groups
+                  </a>
+                </li>
               </ul>
             </li>
             <li class="nav-item">
@@ -88,116 +88,102 @@
       </div>
     </nav>
 
-    <!-- ============== PAGE HERO ============== -->
     <header class="dc3-page-hero jarallax" data-jarallax data-speed="0.3">
       <img class="jarallax-img" src="assets/bg/map/asia.png" alt="" />
       <div class="dc3-section__overlay"></div>
       <div class="container position-relative">
         <div class="row justify-content-center">
           <div class="col-lg-9 text-center">
-            <p class="section-eyebrow">Find a Church Near You</p>
+            <p class="section-eyebrow">Life Done Together</p>
             <h1 class="section-title display-2 fw-bold">
-              Our <span class="text-accent">locations</span> across Asia.
+              Connect <span class="text-accent">groups</span> near you.
             </h1>
             <p class="lead mt-4 fw-light text-muted-2 mx-auto" style="max-width: 720px">
-              From Kuala Lumpur to Hyderabad — Destiny C3 is one family with
-              campuses across Malaysia, India, the Philippines and Thailand.
-              Choose a country to see the churches near you.
+              Connect Groups are small gatherings where we do life together —
+              share, pray, and grow in faith. Choose a country to find a group
+              that fits you.
             </p>
           </div>
         </div>
       </div>
     </header>
 
-    <!-- ============== LOCATIONS EXPLORER ============== -->
-    <section id="locations" class="dc3-locations-page py-6">
-      <div
-        class="container dc3-locations__grid"
-        data-active-region="malaysia"
-      >
-        <!-- Map + country selector -->
+    <section id="connect-groups" class="dc3-connect-page py-6">
+      <div class="container dc3-connect__grid" data-active-region="malaysia">
         <div class="row align-items-start g-5">
-          <div class="col-lg-7">
-            <div class="dc3-map-stack">
-              <img
-                class="dc3-map-stack__base"
-                src="assets/bg/map/asia.png"
-                alt="Map of Asia showing Destiny C3 locations"
-              />
-              <img
-                class="dc3-map-stack__overlay"
-                data-region="malaysia"
-                src="assets/bg/map/malaysia.png"
-                alt=""
-                aria-hidden="true"
-                loading="lazy"
-              />
-              <img
-                class="dc3-map-stack__overlay"
-                data-region="india"
-                src="assets/bg/map/india.png"
-                alt=""
-                aria-hidden="true"
-                loading="lazy"
-              />
-              <img
-                class="dc3-map-stack__overlay"
-                data-region="philippines"
-                src="assets/bg/map/philippines.png"
-                alt=""
-                aria-hidden="true"
-                loading="lazy"
-              />
-              <img
-                class="dc3-map-stack__overlay"
-                data-region="thailand"
-                src="assets/bg/map/thailand.png"
-                alt=""
-                aria-hidden="true"
-                loading="lazy"
-              />
-            </div>
+          <div class="col-lg-5 order-lg-2">
+            <p class="section-eyebrow mb-3">Choose a Country</p>
+            <ul class="dc3-country-list" role="list" data-connect-country-list></ul>
           </div>
 
-          <div class="col-lg-5">
-            <p class="section-eyebrow mb-3">Pick a Country</p>
-            <ul class="dc3-country-list" role="list" data-country-list></ul>
+          <div class="col-lg-7 order-lg-1">
+            <div class="dc3-connect-intro">
+              <div class="dc3-connect-intro__icon">
+                <i class="bi bi-people-fill" aria-hidden="true"></i>
+              </div>
+              <h2 class="dc3-connect-intro__title">Why Connect Groups?</h2>
+              <p class="text-muted-2 mb-0">
+                Church is more than a Sunday service. Connect Groups are where
+                friendships deepen, faith grows, and community becomes real.
+                Browse groups by area to find leaders, meeting times, and who
+                each group is for.
+              </p>
+            </div>
           </div>
         </div>
 
-        <!-- Selected country detail header -->
-        <div class="dc3-region-summary mt-6" data-region-summary>
+        <div class="dc3-region-summary mt-6" data-connect-region-summary>
           <div class="dc3-region-summary__head">
             <div>
-              <p class="section-eyebrow mb-2" data-region-eyebrow>Churches in</p>
-              <h2 class="section-title display-4 fw-bold mb-0" data-region-title>
+              <p class="section-eyebrow mb-2" data-connect-region-eyebrow>Connect groups in</p>
+              <h2 class="section-title display-4 fw-bold mb-0" data-connect-region-title>
                 Malaysia
               </h2>
             </div>
-            <span class="dc3-region-summary__count" data-region-count>
-              0 churches
+            <span class="dc3-region-summary__count" data-connect-region-count>
+              0 groups
             </span>
           </div>
         </div>
 
-        <!-- Church cards grid -->
         <div
-          class="dc3-church-grid mt-4"
-          data-church-grid
+          class="dc3-church-grid dc3-connect-grid mt-4"
+          data-connect-grid
           aria-live="polite"
         ></div>
 
-        <!-- Empty state (hidden by default) -->
-        <div class="dc3-church-empty d-none" data-church-empty>
-          <i class="bi bi-geo-alt"></i>
+        <div class="dc3-church-empty d-none" data-connect-empty>
+          <i class="bi bi-people"></i>
           <p class="mb-0">
-            No churches listed yet for this region. Check back soon!
+            No connect groups listed yet for this region. Check back soon!
           </p>
         </div>
       </div>
     </section>
 
-    <!-- ============== FOOTER ============== -->
+    <section class="dc3-about-cta py-6">
+      <div class="container">
+        <div class="dc3-about-cta__card text-center">
+          <p class="section-eyebrow">New here?</p>
+          <h2 class="section-title display-4 fw-bold">
+            We'd love to help you find the right group.
+          </h2>
+          <p class="lead mx-auto mt-3 text-muted-2" style="max-width: 640px">
+            Not sure which group fits? Reach out and our team will connect you
+            with a leader near you.
+          </p>
+          <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mt-4">
+            <a href="index.html#connect" class="btn btn-dc3 btn-lg px-4">
+              Get in Touch
+            </a>
+            <a href="locations.html" class="btn btn-outline-dark btn-lg px-4">
+              Find a Church
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <footer class="dc3-footer pt-6 pb-4">
       <div class="container">
         <div class="row gy-4">
@@ -213,53 +199,19 @@
               people, and reaching God's world.
             </p>
             <div class="footer-socials mt-3">
-              <a
-                href="https://www.youtube.com/@destinyc3"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="YouTube"
-              ><i class="bi bi-youtube"></i></a>
-              <a
-                href="https://www.instagram.com/destinyc3/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-              ><i class="bi bi-instagram"></i></a>
-              <a
-                href="https://www.facebook.com/destinyc3church/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-              ><i class="bi bi-facebook"></i></a>
-              <a
-                href="https://open.spotify.com/show/4MgphvFGxIaLRP8nHpZ6h2?si=iIZAAWfaR5C_NvtO0m2TMA"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Spotify"
-              ><i class="bi bi-spotify"></i></a>
+              <a href="https://www.youtube.com/@destinyc3" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+              <a href="https://www.instagram.com/destinyc3/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="https://www.facebook.com/destinyc3church/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="https://open.spotify.com/show/4MgphvFGxIaLRP8nHpZ6h2?si=iIZAAWfaR5C_NvtO0m2TMA" target="_blank" rel="noopener noreferrer" aria-label="Spotify"><i class="bi bi-spotify"></i></a>
             </div>
-
             <div class="footer-affiliates mt-4">
               <p class="footer-affiliates__label">Part of the C3 Family</p>
               <div class="footer-affiliates__links">
-                <a
-                  href="http://www.c3churchglobal.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  C3 Global <i class="bi bi-arrow-up-right ms-1"></i>
-                </a>
-                <a
-                  href="http://www.c3college.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  C3 College <i class="bi bi-arrow-up-right ms-1"></i>
-                </a>
+                <a href="http://www.c3churchglobal.com/" target="_blank" rel="noopener noreferrer">C3 Global <i class="bi bi-arrow-up-right ms-1"></i></a>
+                <a href="http://www.c3college.com/" target="_blank" rel="noopener noreferrer">C3 College <i class="bi bi-arrow-up-right ms-1"></i></a>
               </div>
             </div>
           </div>
-
           <div class="col-6 col-lg-2">
             <h6 class="footer-heading">About</h6>
             <ul class="list-unstyled footer-links">
@@ -268,7 +220,6 @@
               <li><a href="about.html">Our Team</a></li>
             </ul>
           </div>
-
           <div class="col-6 col-lg-2">
             <h6 class="footer-heading">Connect</h6>
             <ul class="list-unstyled footer-links">
@@ -276,7 +227,6 @@
               <li><a href="connect-groups.html">Connect Groups</a></li>
             </ul>
           </div>
-
           <div class="col-6 col-lg-2">
             <h6 class="footer-heading">Media</h6>
             <ul class="list-unstyled footer-links">
@@ -285,7 +235,6 @@
               <li><a href="index.html#watch">Podcast</a></li>
             </ul>
           </div>
-
           <div class="col-6 col-lg-2">
             <h6 class="footer-heading">Give</h6>
             <ul class="list-unstyled footer-links">
@@ -295,9 +244,7 @@
             </ul>
           </div>
         </div>
-
         <hr class="footer-divider" />
-
         <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-muted-2 small">
           <span>&copy; <span id="year"></span> Destiny C3. All rights reserved.</span>
           <span>Privacy Notice · Terms</span>
@@ -306,11 +253,8 @@
     </footer>
 
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
     <script src="vendor/jarallax/jarallax.min.js"></script>
-    <script src="vendor/jarallax/jarallax-video.min.js"></script>
-
-    <script src="js/locations-data.js?v=1.0.0"></script>
+    <script src="js/connect-groups-data.js?v=1.0.0"></script>
     <script src="js/main.js?v=1.0.0"></script>
   </body>
 </html>
