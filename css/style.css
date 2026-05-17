@@ -2295,6 +2295,22 @@ h4, h5, h6 {
   outline: none;
 }
 
+/* Credit line */
+.footer-credit {
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  opacity: 0.75;
+}
+
+@media (min-width: 768px) {
+  .footer-bottom-row .footer-credit {
+    order: 2;
+  }
+  .footer-bottom-row .footer-bottom-row__privacy {
+    order: 3;
+  }
+}
+
 /* =========================================================
    MINISTRY DETAIL MODAL (about.html)
    ========================================================= */
