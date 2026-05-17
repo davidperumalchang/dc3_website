@@ -8,7 +8,7 @@
       name="description"
       content="Destiny C3 —Encounter God, Enjoy Community"
     />
-    <title>Destiny C3 — Encounter God, Enjoy Community</title>
+    <title>Destiny C3 — Encounter God, Enjoy Community, Discover Destiny</title>
 
     <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico" />
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png" />
@@ -56,8 +56,21 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="index.html">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
+            <li class="nav-item dropdown dropdown-hover">
+              <a
+                class="nav-link dropdown-toggle"
+                href="about.html"
+                id="aboutNavDropdown"
+                role="button"
+                aria-expanded="false"
+              >
+                About
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="aboutNavDropdown">
+                <li><a class="dropdown-item" href="about.html#believe">What We Believe</a></li>
+                <li><a class="dropdown-item" href="about.html#ministries">Ministries</a></li>
+                <li><a class="dropdown-item" href="our-team.html">Our Team</a></li>
+              </ul>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="locations.html">Our Locations</a>
@@ -73,15 +86,38 @@
                 Connect
               </a>
               <ul class="dropdown-menu" aria-labelledby="connectNavDropdown">
-                <li><a class="dropdown-item" href="#connect">Get Connected</a></li>
+                <li><a class="dropdown-item" href="contact.html">Get Connected</a></li>
                 <li><a class="dropdown-item" href="connect-groups.html">Connect Groups</a></li>
               </ul>
             </li>
+            <li class="nav-item dropdown dropdown-hover">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="mediaNavDropdown"
+                role="button"
+                aria-expanded="false"
+              >
+                Media
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="mediaNavDropdown">
+                <li>
+                  <a class="dropdown-item" href="https://www.youtube.com/@destinyc3" target="_blank" rel="noopener noreferrer">
+                    Watch Live <i class="bi bi-arrow-up-right ms-1" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="https://open.spotify.com/show/4MgphvFGxIaLRP8nHpZ6h2?si=iIZAAWfaR5C_NvtO0m2TMA" target="_blank" rel="noopener noreferrer">
+                    Podcast <i class="bi bi-arrow-up-right ms-1" aria-hidden="true"></i>
+                  </a>
+                </li>
+              </ul>
+            </li>
             <li class="nav-item">
-              <a class="nav-link" href="#give">Give</a>
+              <a class="nav-link" href="give.html">Give</a>
             </li>
             <li class="nav-item ms-lg-3">
-              <a class="btn btn-dc3 btn-sm px-3" href="#watch">
+              <a class="btn btn-dc3 btn-sm px-3" href="https://www.youtube.com/@destinyc3" target="_blank" rel="noopener noreferrer">
                 <i class="bi bi-play-fill"></i> Watch Live
               </a>
             </li>
@@ -113,22 +149,24 @@
           height="120"
         />
         <h1 class="hero-title display-1 fw-bolder">
-            <span>Encounter God</span>
+            <span>Encounter God.</span> <span>Enjoy Community.</span>
             <br>
-            <span>Enjoy Community</span>
+            <span>Discover <span class="hero-title__brand">Destiny</span></span>
         </h1>
-        <p class="hero-lead mx-auto mt-3">
-          Destiny C3 is a movement of churches and a family of believers passionate
-          about Jesus, people, and the nations.
-        </p>
         <div class="hero-cta d-flex flex-column flex-sm-row justify-content-center gap-3 mt-4">
-          <a href="#watch" class="btn btn-dc3 btn-lg px-4">
+          <a href="https://www.youtube.com/@destinyc3" target="_blank" rel="noopener noreferrer" class="btn btn-dc3 btn-lg px-4">
             <i class="bi bi-play-circle-fill me-2"></i>Join a Service Online
           </a>
           <a href="locations.html" class="btn btn-dc3 btn-lg px-4">
-            Find a Location
+            Find a Church Near You
           </a>
         </div>
+      </div>
+
+      <div class="dc3-hero__curve" aria-hidden="true">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,120 L0,48 C360,48 360,0 720,0 C1080,0 1080,48 1440,48 L1440,120 Z" />
+        </svg>
       </div>
     </header>
 
@@ -136,7 +174,7 @@
     <section class="dc3-strip py-5">
       <div class="container">
         <div class="row text-center gy-4 align-items-center">
-          <a href="#watch" class="col-6 col-md-3 strip-item">
+          <a href="https://www.youtube.com/@destinyc3" target="_blank" rel="noopener noreferrer" class="col-6 col-md-3 strip-item">
             <i class="bi bi-broadcast strip-icon"></i>
             <h6 class="mt-3 mb-1">Watch Online</h6>
             <p class="small mb-0 text-muted-2">Sundays · 10:30 AM</p>
@@ -151,7 +189,7 @@
             <h6 class="mt-3 mb-1">Locations</h6>
             <p class="small mb-0 text-muted-2">Across the nations</p>
           </a>
-          <a href="#give" class="col-6 col-md-3 strip-item">
+          <a href="give.html" class="col-6 col-md-3 strip-item">
             <i class="bi bi-heart-fill strip-icon"></i>
             <h6 class="mt-3 mb-1">Give</h6>
             <p class="small mb-0 text-muted-2">Partner with us</p>
@@ -181,23 +219,88 @@
             </a>
           </div>
           <div class="col-lg-6">
-            <div class="dc3-locations-teaser__grid">
-              <a href="locations.html#malaysia" class="dc3-locations-teaser__chip">
-                <span class="dc3-locations-teaser__chip-name">Malaysia</span>
-                <span class="dc3-locations-teaser__chip-count">6 churches</span>
-              </a>
-              <a href="locations.html#india" class="dc3-locations-teaser__chip">
-                <span class="dc3-locations-teaser__chip-name">India</span>
-                <span class="dc3-locations-teaser__chip-count">2 churches</span>
-              </a>
-              <a href="locations.html#thailand" class="dc3-locations-teaser__chip">
-                <span class="dc3-locations-teaser__chip-name">Thailand</span>
-                <span class="dc3-locations-teaser__chip-count">1 church</span>
-              </a>
-              <a href="locations.html#philippines" class="dc3-locations-teaser__chip">
-                <span class="dc3-locations-teaser__chip-name">Philippines</span>
-                <span class="dc3-locations-teaser__chip-count">1 church</span>
-              </a>
+            <div class="dc3-locations-teaser__panel" data-locations-teaser>
+              <div class="dc3-locations-teaser__map" aria-hidden="true">
+                <picture>
+                  <source
+                    media="(max-width: 991.98px)"
+                    srcset="assets/bg/map/asia-mobile.jpg"
+                  />
+                  <img
+                    class="dc3-locations-teaser__map-base"
+                    src="assets/bg/map/asia.png"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
+                <img
+                  class="dc3-locations-teaser__map-overlay"
+                  data-region="malaysia"
+                  src="assets/bg/map/malaysia.png"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                  aria-hidden="true"
+                />
+                <img
+                  class="dc3-locations-teaser__map-overlay"
+                  data-region="india"
+                  src="assets/bg/map/india.png"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                  aria-hidden="true"
+                />
+                <img
+                  class="dc3-locations-teaser__map-overlay"
+                  data-region="thailand"
+                  src="assets/bg/map/thailand.png"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                  aria-hidden="true"
+                />
+                <img
+                  class="dc3-locations-teaser__map-overlay"
+                  data-region="philippines"
+                  src="assets/bg/map/philippines.png"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                  aria-hidden="true"
+                />
+              </div>
+              <div class="dc3-locations-teaser__grid mt-4">
+                <a href="locations.html#malaysia" data-region="malaysia" class="dc3-locations-teaser__chip">
+                  <img class="dc3-locations-teaser__chip-flag" src="assets/bg/img/country/my.svg" alt="" aria-hidden="true" width="22" height="22" />
+                  <span class="dc3-locations-teaser__chip-text">
+                    <span class="dc3-locations-teaser__chip-name">Malaysia</span>
+                    <span class="dc3-locations-teaser__chip-count">6 churches</span>
+                  </span>
+                </a>
+                <a href="locations.html#india" data-region="india" class="dc3-locations-teaser__chip">
+                  <img class="dc3-locations-teaser__chip-flag" src="assets/bg/img/country/in.svg" alt="" aria-hidden="true" width="22" height="22" />
+                  <span class="dc3-locations-teaser__chip-text">
+                    <span class="dc3-locations-teaser__chip-name">India</span>
+                    <span class="dc3-locations-teaser__chip-count">2 churches</span>
+                  </span>
+                </a>
+                <a href="locations.html#thailand" data-region="thailand" class="dc3-locations-teaser__chip">
+                  <img class="dc3-locations-teaser__chip-flag" src="assets/bg/img/country/th.svg" alt="" aria-hidden="true" width="22" height="22" />
+                  <span class="dc3-locations-teaser__chip-text">
+                    <span class="dc3-locations-teaser__chip-name">Thailand</span>
+                    <span class="dc3-locations-teaser__chip-count">1 church</span>
+                  </span>
+                </a>
+                <a href="locations.html#philippines" data-region="philippines" class="dc3-locations-teaser__chip">
+                  <img class="dc3-locations-teaser__chip-flag" src="assets/bg/img/country/ph.svg" alt="" aria-hidden="true" width="22" height="22" />
+                  <span class="dc3-locations-teaser__chip-text">
+                    <span class="dc3-locations-teaser__chip-name">Philippines</span>
+                    <span class="dc3-locations-teaser__chip-count">1 church</span>
+                  </span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -240,99 +343,25 @@
       </div>
     </section>
 
-    <!-- ============== CONNECT CTA ============== -->
-    <section id="connect" class="dc3-connect py-6">
+    <!-- ============== NEXT STEP CTA ============== -->
+    <section class="dc3-about-cta py-6">
       <div class="container">
-        <div class="row align-items-center g-5">
-          <div class="col-lg-6">
-            <p class="section-eyebrow">We'd love to meet you</p>
-            <h2 class="section-title display-4 fw-bold">
-              Take your <span class="text-accent">next step</span>.
-            </h2>
-            <p class="lead mt-3 text-muted-2">
-              Whether you're brand new, looking to connect, or ready to serve — we'd
-              love to hear from you. Fill out the form and our team will be in touch.
-            </p>
-            <ul class="list-unstyled mt-4 connect-perks">
-              <li><i class="bi bi-check-circle-fill text-accent me-2"></i>Connect with our team</li>
-              <li><i class="bi bi-check-circle-fill text-accent me-2"></i>Find a Connect Group near you</li>
-              <li><i class="bi bi-check-circle-fill text-accent me-2"></i>Hear about upcoming events</li>
-            </ul>
-          </div>
-          <div class="col-lg-6">
-            <form
-              class="dc3-form p-4 p-md-5"
-              novalidate
-              onsubmit="event.preventDefault(); this.reset(); document.getElementById('formStatus').classList.remove('d-none');"
-            >
-              <div class="row g-3">
-                <div class="col-md-6">
-                  <label for="firstName" class="form-label">First Name</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="firstName"
-                    maxlength="50"
-                    required
-                  />
-                </div>
-                <div class="col-md-6">
-                  <label for="lastName" class="form-label">Last Name</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="lastName"
-                    maxlength="50"
-                    required
-                  />
-                </div>
-                <div class="col-md-6">
-                  <label for="email" class="form-label">Email</label>
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="email"
-                    maxlength="120"
-                    required
-                  />
-                </div>
-                <div class="col-md-6">
-                  <label for="phone" class="form-label">Mobile Phone</label>
-                  <input
-                    type="tel"
-                    class="form-control"
-                    id="phone"
-                    inputmode="tel"
-                    pattern="[0-9+\-\s()]{6,20}"
-                    maxlength="20"
-                  />
-                </div>
-                <div class="col-12">
-                  <label for="message" class="form-label">How can we help?</label>
-                  <textarea
-                    class="form-control"
-                    id="message"
-                    rows="3"
-                    maxlength="1000"
-                  ></textarea>
-                </div>
-                <div class="col-12 d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-2">
-                  <small class="text-muted-2">
-                    By submitting, you agree to our privacy policy.
-                  </small>
-                  <button type="submit" class="btn btn-dc3 px-4">
-                    Send Message <i class="bi bi-arrow-right ms-1"></i>
-                  </button>
-                </div>
-                <div
-                  id="formStatus"
-                  class="alert alert-success mt-2 d-none"
-                  role="alert"
-                >
-                  Thanks! We'll be in touch shortly.
-                </div>
-              </div>
-            </form>
+        <div class="dc3-about-cta__card text-center">
+          <p class="section-eyebrow">Your next step</p>
+          <h2 class="section-title display-4 fw-bold">
+            We'd love to meet you.
+          </h2>
+          <p class="lead mx-auto mt-3 text-muted-2" style="max-width: 640px">
+            Whether you're new to church, looking for a home, or ready to serve —
+            there's a place for you in this family.
+          </p>
+          <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mt-4">
+            <a href="contact.html" class="btn btn-dc3 btn-lg px-4">
+              Get in Touch
+            </a>
+            <a href="locations.html" class="btn btn-outline-dark btn-lg px-4">
+              Find a Location
+            </a>
           </div>
         </div>
       </div>
@@ -404,16 +433,16 @@
           <div class="col-6 col-lg-2">
             <h6 class="footer-heading">About</h6>
             <ul class="list-unstyled footer-links">
-              <li><a href="about.html">Our Story</a></li>
-              <li><a href="about.html">We Believe</a></li>
-              <li><a href="about.html">Our Team</a></li>
+              <li><a href="about.html#believe">What We Believe</a></li>
+              <li><a href="about.html#ministries">Ministries</a></li>
+              <li><a href="our-team.html">Our Team</a></li>
             </ul>
           </div>
 
           <div class="col-6 col-lg-2">
             <h6 class="footer-heading">Connect</h6>
             <ul class="list-unstyled footer-links">
-              <li><a href="#connect">Get Connected</a></li>
+              <li><a href="contact.html">Get Connected</a></li>
               <li><a href="connect-groups.html">Connect Groups</a></li>
             </ul>
           </div>
@@ -421,18 +450,15 @@
           <div class="col-6 col-lg-2">
             <h6 class="footer-heading">Media</h6>
             <ul class="list-unstyled footer-links">
-              <li><a href="#watch">Watch Live</a></li>
-              <li><a href="#watch">Music</a></li>
-              <li><a href="#watch">Podcast</a></li>
+              <li><a href="https://www.youtube.com/@destinyc3" target="_blank" rel="noopener noreferrer">Watch Live</a></li>
+              <li><a href="https://open.spotify.com/show/4MgphvFGxIaLRP8nHpZ6h2?si=iIZAAWfaR5C_NvtO0m2TMA">Podcast</a></li>
             </ul>
           </div>
 
           <div class="col-6 col-lg-2">
             <h6 class="footer-heading">Give</h6>
             <ul class="list-unstyled footer-links">
-              <li><a href="#give">Give Online</a></li>
-              <li><a href="#give">Missions</a></li>
-              <li><a href="#give">Partner</a></li>
+              <li><a href="give.html">Give Online</a></li>
             </ul>
           </div>
         </div>
@@ -441,7 +467,7 @@
 
         <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-muted-2 small">
           <span>&copy; <span id="year"></span> Destiny C3. All rights reserved.</span>
-          <span>Privacy Notice · Terms</span>
+          <span><a href="privacy.html" class="footer-legal-link">Privacy Notice</a></span>
         </div>
       </div>
     </footer>

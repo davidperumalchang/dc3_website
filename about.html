@@ -54,8 +54,22 @@
             <li class="nav-item">
               <a class="nav-link" href="index.html">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="about.html">About</a>
+            <li class="nav-item dropdown dropdown-hover">
+              <a
+                class="nav-link dropdown-toggle active"
+                aria-current="page"
+                href="about.html"
+                id="aboutNavDropdown"
+                role="button"
+                aria-expanded="false"
+              >
+                About
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="aboutNavDropdown">
+                <li><a class="dropdown-item" href="about.html#believe">What We Believe</a></li>
+                <li><a class="dropdown-item" href="about.html#ministries">Ministries</a></li>
+                <li><a class="dropdown-item" href="our-team.html">Our Team</a></li>
+              </ul>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="locations.html">Our Locations</a>
@@ -71,15 +85,38 @@
                 Connect
               </a>
               <ul class="dropdown-menu" aria-labelledby="connectNavDropdown">
-                <li><a class="dropdown-item" href="index.html#connect">Get Connected</a></li>
+                <li><a class="dropdown-item" href="contact.html">Get Connected</a></li>
                 <li><a class="dropdown-item" href="connect-groups.html">Connect Groups</a></li>
               </ul>
             </li>
+            <li class="nav-item dropdown dropdown-hover">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="mediaNavDropdown"
+                role="button"
+                aria-expanded="false"
+              >
+                Media
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="mediaNavDropdown">
+                <li>
+                  <a class="dropdown-item" href="https://www.youtube.com/@destinyc3" target="_blank" rel="noopener noreferrer">
+                    Watch Live <i class="bi bi-arrow-up-right ms-1" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="https://open.spotify.com/show/4MgphvFGxIaLRP8nHpZ6h2?si=iIZAAWfaR5C_NvtO0m2TMA" target="_blank" rel="noopener noreferrer">
+                    Podcast <i class="bi bi-arrow-up-right ms-1" aria-hidden="true"></i>
+                  </a>
+                </li>
+              </ul>
+            </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html#give">Give</a>
+              <a class="nav-link" href="give.html">Give</a>
             </li>
             <li class="nav-item ms-lg-3">
-              <a class="btn btn-dc3 btn-sm px-3" href="index.html#watch">
+              <a class="btn btn-dc3 btn-sm px-3" href="https://www.youtube.com/@destinyc3" target="_blank" rel="noopener noreferrer">
                 <i class="bi bi-play-fill"></i> Watch Live
               </a>
             </li>
@@ -113,213 +150,218 @@
       </div>
     </header>
 
-    <!-- ============== VISION ============== -->
-    <section class="dc3-about-vision py-6">
-      <div class="container">
-        <div class="row align-items-center g-5">
-          <div class="col-lg-5">
-            <p class="section-eyebrow">Our Vision</p>
-            <h2 class="section-title display-4 fw-bold">
-              We dream of a great church for every nation.
-            </h2>
-          </div>
-          <div class="col-lg-7">
-            <p class="lead text-muted-2">
-              A house of worship. A house of prayer. A house of family. Our vision
-              is to see a great church planted in every city, in every nation —
-              a community where every person can encounter the love of Jesus,
-              discover their purpose, and become everything God has destined them
-              to be.
-            </p>
-            <p class="text-muted-2 mt-3">
-              We believe the local church is the hope of the world. From our home
-              in Malaysia, we're partnering with God to build a global family that
-              transforms lives, communities, and nations.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============== OUR STORY ============== -->
-    <section class="dc3-about-story py-6">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-10">
-            <div class="text-center mb-5">
-              <p class="section-eyebrow">Our Story</p>
-              <h2 class="section-title display-4 fw-bold">
-                From one city to many nations.
-              </h2>
-            </div>
-
-            <div class="dc3-timeline">
-              <div class="dc3-timeline__item">
-                <div class="dc3-timeline__year">Beginning</div>
-                <div class="dc3-timeline__body">
-                  <h3 class="dc3-timeline__title">A vision birthed in prayer</h3>
-                  <p class="text-muted-2">
-                    Destiny C3 began with a small group of believers, a big dream,
-                    and a deep conviction that the local church could change the world.
-                  </p>
-                </div>
-              </div>
-
-              <div class="dc3-timeline__item">
-                <div class="dc3-timeline__year">Growth</div>
-                <div class="dc3-timeline__body">
-                  <h3 class="dc3-timeline__title">Roots across Malaysia</h3>
-                  <p class="text-muted-2">
-                    From Kuala Lumpur, the church multiplied across Malaysia — Ipoh,
-                    Penang, Johor Bahru, Kuching, Kota Kinabalu. Lives transformed.
-                    Families restored. Generations awakened.
-                  </p>
-                </div>
-              </div>
-
-              <div class="dc3-timeline__item">
-                <div class="dc3-timeline__year">Expansion</div>
-                <div class="dc3-timeline__body">
-                  <h3 class="dc3-timeline__title">A movement across Asia</h3>
-                  <p class="text-muted-2">
-                    What began locally became regional. Today, Destiny C3 churches
-                    are planted across Asia — India, Philippines, Thailand and
-                    beyond — each one a house for the hurting, the seeking, and
-                    the called.
-                  </p>
-                </div>
-              </div>
-
-              <div class="dc3-timeline__item">
-                <div class="dc3-timeline__year">Today</div>
-                <div class="dc3-timeline__body">
-                  <h3 class="dc3-timeline__title">A family for every nation</h3>
-                  <p class="text-muted-2">
-                    We are still dreaming. Still planting. Still believing that
-                    every nation needs a great church — and that the best is yet
-                    to come.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ============== WE BELIEVE ============== -->
-    <section class="dc3-about-believe py-6">
+    <section id="believe" class="dc3-about-believe py-6">
       <div class="container">
         <div class="text-center mb-5">
           <p class="section-eyebrow">What We Believe</p>
-          <h2 class="section-title display-4 fw-bold">The values that shape us.</h2>
-          <p class="lead mx-auto text-muted-2" style="max-width: 700px">
-            We are a Bible-believing, Spirit-empowered, people-loving church.
-            These are the convictions that anchor everything we do.
+          <h2 class="section-title display-4 fw-bold">The convictions that shape us.</h2>
+          <p class="lead mx-auto text-muted-2" style="max-width: 720px">
+            We live by our convictions — the core values that make us who we
+            are. The Bible is our guide to life, not only because it is good,
+            but because it is true.
           </p>
         </div>
 
-        <div class="row g-4">
-          <div class="col-md-6 col-lg-4">
-            <div class="dc3-value-card h-100">
-              <div class="dc3-value-card__icon">
-                <i class="bi bi-book"></i>
-              </div>
-              <h3 class="dc3-value-card__title">The Bible</h3>
-              <p class="text-muted-2 mb-0">
-                The Bible is the inspired Word of God — our final authority for
-                faith, life, and practice.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="dc3-value-card h-100">
-              <div class="dc3-value-card__icon">
-                <i class="bi bi-heart"></i>
-              </div>
-              <h3 class="dc3-value-card__title">Jesus Christ</h3>
-              <p class="text-muted-2 mb-0">
-                We believe in one God, eternally existent as Father, Son, and
-                Holy Spirit. Jesus is Lord and Saviour.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="dc3-value-card h-100">
-              <div class="dc3-value-card__icon">
-                <i class="bi bi-wind"></i>
-              </div>
-              <h3 class="dc3-value-card__title">The Holy Spirit</h3>
-              <p class="text-muted-2 mb-0">
-                We are empowered by the Holy Spirit to live for God, love people,
-                and reach the world.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="dc3-value-card h-100">
-              <div class="dc3-value-card__icon">
-                <i class="bi bi-people"></i>
-              </div>
-              <h3 class="dc3-value-card__title">The Church</h3>
-              <p class="text-muted-2 mb-0">
-                The local church is God's plan A — a family, a body, and a force
-                for good in the earth.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="dc3-value-card h-100">
-              <div class="dc3-value-card__icon">
-                <i class="bi bi-globe2"></i>
-              </div>
-              <h3 class="dc3-value-card__title">The Mission</h3>
-              <p class="text-muted-2 mb-0">
-                We are sent — to preach the gospel, make disciples, and disciple
-                nations until Jesus returns.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="dc3-value-card h-100">
-              <div class="dc3-value-card__icon">
-                <i class="bi bi-stars"></i>
-              </div>
-              <h3 class="dc3-value-card__title">The Future</h3>
-              <p class="text-muted-2 mb-0">
-                Jesus is coming again. Until that day, we live with hope, urgency,
-                and joy — for the best is yet to come.
-              </p>
-            </div>
-          </div>
-        </div>
+        <ol class="dc3-belief-grid" aria-label="Statement of beliefs">
+          <li class="dc3-belief-card">
+            <span class="dc3-belief-card__number" aria-hidden="true">01</span>
+            <p class="dc3-belief-card__text mb-0">
+              There is one God: God the Father, God the Son and God the Holy
+              Spirit.
+            </p>
+          </li>
+          <li class="dc3-belief-card">
+            <span class="dc3-belief-card__number" aria-hidden="true">02</span>
+            <p class="dc3-belief-card__text mb-0">
+              In the deity of our Lord Jesus Christ the Son of God; we believe
+              in His virgin birth, in His sinless life, in His miracles, in
+              His vicarious and atoning death, in His bodily resurrection, in
+              His ascension to the right hand of the Father, His constant
+              intercession and in His imminent return.
+            </p>
+          </li>
+          <li class="dc3-belief-card">
+            <span class="dc3-belief-card__number" aria-hidden="true">03</span>
+            <p class="dc3-belief-card__text mb-0">
+              In the person and work of the Holy Spirit with His fruit and
+              gifts available in the Church.
+            </p>
+          </li>
+          <li class="dc3-belief-card">
+            <span class="dc3-belief-card__number" aria-hidden="true">04</span>
+            <p class="dc3-belief-card__text mb-0">
+              The Bible as the living word of God — infallible, authoritative
+              and everlasting, and the foundation of all Christian doctrine
+              and faith.
+            </p>
+          </li>
+          <li class="dc3-belief-card">
+            <span class="dc3-belief-card__number" aria-hidden="true">05</span>
+            <p class="dc3-belief-card__text mb-0">
+              In the existence of an evil spiritual being — the devil.
+            </p>
+          </li>
+          <li class="dc3-belief-card">
+            <span class="dc3-belief-card__number" aria-hidden="true">06</span>
+            <p class="dc3-belief-card__text mb-0">
+              In the spiritually lost condition of all people and the
+              essential need for the "new birth" by faith in Jesus Christ.
+            </p>
+          </li>
+          <li class="dc3-belief-card">
+            <span class="dc3-belief-card__number" aria-hidden="true">07</span>
+            <p class="dc3-belief-card__text mb-0">
+              In the baptism of the Holy Spirit as a gift available to
+              believers, with the normal evidence of speaking in other
+              tongues.
+            </p>
+          </li>
+          <li class="dc3-belief-card">
+            <span class="dc3-belief-card__number" aria-hidden="true">08</span>
+            <p class="dc3-belief-card__text mb-0">
+              In the sacraments of the Lord's Supper and baptism by full
+              immersion in water for all believers.
+            </p>
+          </li>
+          <li class="dc3-belief-card">
+            <span class="dc3-belief-card__number" aria-hidden="true">09</span>
+            <p class="dc3-belief-card__text mb-0">
+              In the resurrection of both the saved and the lost, the one to
+              everlasting life and the other to everlasting separation from
+              God.
+            </p>
+          </li>
+          <li class="dc3-belief-card">
+            <span class="dc3-belief-card__number" aria-hidden="true">10</span>
+            <p class="dc3-belief-card__text mb-0">
+              In the church being the body of Christ, and each member being
+              an active part of a local church, fulfilling the Great
+              Commission.
+            </p>
+          </li>
+          <li class="dc3-belief-card">
+            <span class="dc3-belief-card__number" aria-hidden="true">11</span>
+            <p class="dc3-belief-card__text mb-0">
+              Marriage was instituted by God, ratified by Jesus, and is
+              exclusively between a man and a woman. It is a picture of
+              Christ and His church.
+            </p>
+          </li>
+          <li class="dc3-belief-card">
+            <span class="dc3-belief-card__number" aria-hidden="true">12</span>
+            <p class="dc3-belief-card__text mb-0">
+              Sex is a gift from God for procreation and unity, and it is
+              only appropriate within and designed for marriage.
+            </p>
+          </li>
+        </ol>
       </div>
     </section>
 
-    <!-- ============== TEAM CTA ============== -->
-    <section class="dc3-about-team py-6">
+    <!-- ============== MINISTRIES ============== -->
+    <section id="ministries" class="dc3-about-ministries py-6">
       <div class="container">
-        <div class="row align-items-center g-5">
-          <div class="col-lg-6">
-            <p class="section-eyebrow">Our Team</p>
-            <h2 class="section-title display-4 fw-bold">
-              Pastors and people, building together.
-            </h2>
-            <p class="lead text-muted-2 mt-3">
-              Behind every Destiny C3 location is a team of passionate pastors,
-              leaders, and volunteers — ordinary people partnering with an
-              extraordinary God.
-            </p>
-            <a href="index.html#connect" class="btn btn-dc3 btn-lg mt-3 px-4">
-              Meet the Team <i class="bi bi-arrow-right ms-1"></i>
-            </a>
-          </div>
-          <div class="col-lg-6">
-            <div class="dc3-about-team__grid">
-              <div class="dc3-about-team__cell" aria-hidden="true"></div>
-              <div class="dc3-about-team__cell" aria-hidden="true"></div>
-              <div class="dc3-about-team__cell" aria-hidden="true"></div>
-              <div class="dc3-about-team__cell" aria-hidden="true"></div>
+        <div class="text-center mb-5">
+          <p class="section-eyebrow">Our Ministries</p>
+          <h2 class="section-title display-4 fw-bold">A place for every season.</h2>
+          <p class="lead mx-auto text-muted-2" style="max-width: 720px">
+            From our youngest to our seniors, men to women, families to small
+            groups — Destiny C3 has communities to support, encourage, and
+            grow with you, wherever you are in life.
+          </p>
+        </div>
+
+        <div class="dc3-ministry-grid">
+          <article class="dc3-ministry-card" data-ministry="kids">
+            <i class="bi bi-arrow-up-right dc3-ministry-card__arrow" aria-hidden="true"></i>
+            <span class="dc3-ministry-card__icon" aria-hidden="true">
+              <i class="bi bi-emoji-smile-fill"></i>
+            </span>
+            <h3 class="dc3-ministry-card__name">Kids</h3>
+            <p class="dc3-ministry-card__tagline">Faith for our youngest.</p>
+          </article>
+          <article class="dc3-ministry-card" data-ministry="youth">
+            <i class="bi bi-arrow-up-right dc3-ministry-card__arrow" aria-hidden="true"></i>
+            <span class="dc3-ministry-card__icon" aria-hidden="true">
+              <i class="bi bi-fire"></i>
+            </span>
+            <h3 class="dc3-ministry-card__name">Youth</h3>
+            <p class="dc3-ministry-card__tagline">Teens &amp; friendships.</p>
+          </article>
+          <article class="dc3-ministry-card" data-ministry="awaken-gathering">
+            <i class="bi bi-arrow-up-right dc3-ministry-card__arrow" aria-hidden="true"></i>
+            <span class="dc3-ministry-card__icon" aria-hidden="true">
+              <i class="bi bi-brightness-high-fill"></i>
+            </span>
+            <h3 class="dc3-ministry-card__name">Awaken Gathering</h3>
+            <p class="dc3-ministry-card__tagline">Sisterhood &amp; growth.</p>
+          </article>
+          <article class="dc3-ministry-card" data-ministry="man-up">
+            <i class="bi bi-arrow-up-right dc3-ministry-card__arrow" aria-hidden="true"></i>
+            <span class="dc3-ministry-card__icon" aria-hidden="true">
+              <i class="bi bi-shield-fill"></i>
+            </span>
+            <h3 class="dc3-ministry-card__name">Man Up</h3>
+            <p class="dc3-ministry-card__tagline">Brotherhood &amp; growth.</p>
+          </article>
+          <article class="dc3-ministry-card" data-ministry="connect-group">
+            <i class="bi bi-arrow-up-right dc3-ministry-card__arrow" aria-hidden="true"></i>
+            <span class="dc3-ministry-card__icon" aria-hidden="true">
+              <i class="bi bi-people-fill"></i>
+            </span>
+            <h3 class="dc3-ministry-card__name">Connect Group</h3>
+            <p class="dc3-ministry-card__tagline">Life done together.</p>
+          </article>
+        </div>
+
+        <!-- Ministry detail modal (populated dynamically by main.js) -->
+        <div
+          class="modal fade dc3-ministry-modal"
+          id="ministryModal"
+          tabindex="-1"
+          aria-labelledby="ministryModalTitle"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content dc3-ministry-modal__content">
+              <button
+                type="button"
+                class="btn-close dc3-ministry-modal__close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+              <div class="dc3-ministry-modal__hero">
+                <span
+                  class="dc3-ministry-modal__icon"
+                  aria-hidden="true"
+                  data-ministry-icon-slot
+                ></span>
+                <p class="dc3-ministry-modal__eyebrow" data-ministry-tagline></p>
+                <h2
+                  id="ministryModalTitle"
+                  class="dc3-ministry-modal__name"
+                  data-ministry-name
+                ></h2>
+              </div>
+              <div class="dc3-ministry-modal__body" data-ministry-body></div>
+              <div class="dc3-ministry-modal__cta">
+                <p class="dc3-ministry-modal__cta-text">
+                  Interested in joining or learning more?
+                </p>
+                <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+                  <a href="contact.html" class="btn btn-dc3 btn-lg px-4">
+                    <i class="bi bi-envelope-fill me-2"></i>Get Connected
+                  </a>
+                  <button
+                    type="button"
+                    class="btn btn-outline-dark btn-lg px-4"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -339,11 +381,11 @@
             there's a place for you in this family.
           </p>
           <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mt-4">
-            <a href="locations.html" class="btn btn-dc3 btn-lg px-4">
-              Find a Location
+            <a href="contact.html" class="btn btn-dc3 btn-lg px-4">
+              Get in Touch
             </a>
-            <a href="index.html#connect" class="btn btn-outline-dark btn-lg px-4">
-              Get Connected
+            <a href="locations.html" class="btn btn-outline-dark btn-lg px-4">
+              Find a Location
             </a>
           </div>
         </div>
@@ -416,16 +458,16 @@
           <div class="col-6 col-lg-2">
             <h6 class="footer-heading">About</h6>
             <ul class="list-unstyled footer-links">
-              <li><a href="about.html">Our Story</a></li>
-              <li><a href="about.html">We Believe</a></li>
-              <li><a href="about.html">Our Team</a></li>
+              <li><a href="about.html#believe">What We Believe</a></li>
+              <li><a href="about.html#ministries">Ministries</a></li>
+              <li><a href="our-team.html">Our Team</a></li>
             </ul>
           </div>
 
           <div class="col-6 col-lg-2">
             <h6 class="footer-heading">Connect</h6>
             <ul class="list-unstyled footer-links">
-              <li><a href="index.html#connect">Get Connected</a></li>
+              <li><a href="contact.html">Get Connected</a></li>
               <li><a href="connect-groups.html">Connect Groups</a></li>
             </ul>
           </div>
@@ -433,18 +475,15 @@
           <div class="col-6 col-lg-2">
             <h6 class="footer-heading">Media</h6>
             <ul class="list-unstyled footer-links">
-              <li><a href="index.html#watch">Watch Live</a></li>
-              <li><a href="index.html#watch">Music</a></li>
-              <li><a href="index.html#watch">Podcast</a></li>
+              <li><a href="https://www.youtube.com/@destinyc3">Watch Live</a></li>
+              <li><a href="https://open.spotify.com/show/4MgphvFGxIaLRP8nHpZ6h2?si=iIZAAWfaR5C_NvtO0m2TMA">Podcast</a></li>
             </ul>
           </div>
 
           <div class="col-6 col-lg-2">
             <h6 class="footer-heading">Give</h6>
             <ul class="list-unstyled footer-links">
-              <li><a href="index.html#give">Give Online</a></li>
-              <li><a href="index.html#give">Missions</a></li>
-              <li><a href="index.html#give">Partner</a></li>
+              <li><a href="give.html">Give Online</a></li>
             </ul>
           </div>
         </div>
@@ -453,7 +492,7 @@
 
         <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-muted-2 small">
           <span>&copy; <span id="year"></span> Destiny C3. All rights reserved.</span>
-          <span>Privacy Notice · Terms</span>
+          <span><a href="privacy.html" class="footer-legal-link">Privacy Notice</a></span>
         </div>
       </div>
     </footer>
@@ -463,6 +502,7 @@
     <script src="vendor/jarallax/jarallax.min.js"></script>
     <script src="vendor/jarallax/jarallax-video.min.js"></script>
 
+    <script src="js/ministries-data.js?v=1.0.0"></script>
     <script src="js/main.js?v=1.0.0"></script>
   </body>
 </html>

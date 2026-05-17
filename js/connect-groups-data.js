@@ -3,10 +3,11 @@
    - Source of truth for connect-groups.html
    ========================================================= */
 window.DC3_CONNECT_GROUPS = {
-  order: ["malaysia", "india", "philippines", "thailand"],
+  order: ["malaysia"],
   regions: {
     malaysia: {
-      label: "Malaysia",
+      label: "Destiny C3 Subang",
+      flag: "assets/bg/img/country/my.svg",
       tagline: "Life done together — find a group near you.",
       groups: [
         {
@@ -16,7 +17,7 @@ window.DC3_CONNECT_GROUPS = {
           dynamics: "Seniors aged 50 and above"
         },
         {
-          location: "Goodyear Court, Persiaran Kewajipan, Subang Jaya",
+          location: "Goodyear Court, Subang Jaya",
           leaders: ["Ps Ramesh Kumar", "Mary Stephen"],
           meetFrequency: "Alternate Friday night",
           dynamics: "Families (ages 25–70)"
@@ -77,69 +78,6 @@ window.DC3_CONNECT_GROUPS = {
           leaders: ["Judy"],
           meetFrequency: "Alternate Friday night",
           dynamics: "Seniors aged 50 and above"
-        }
-      ]
-    },
-
-    india: {
-      label: "India",
-      tagline: "Growing together in community across India.",
-      groups: [
-        {
-          location: "Visthar, Bangalore",
-          leaders: ["Paul Praveen", "Subhashini"],
-          meetFrequency: "Every other Saturday evening",
-          dynamics: "Young professionals and families"
-        },
-        {
-          location: "Hyderabad — Medchal",
-          leaders: ["Joshua Pothuganti"],
-          meetFrequency: "Weekly Wednesday evening",
-          dynamics: "Mixed ages, English & Telugu"
-        },
-        {
-          location: "Hyderabad — City Centre",
-          leaders: ["Rahul", "Kani"],
-          meetFrequency: "Alternate Sunday afternoon",
-          dynamics: "Students and young adults"
-        }
-      ]
-    },
-
-    philippines: {
-      label: "Philippines",
-      tagline: "Connect groups across the islands.",
-      groups: [
-        {
-          location: "Catarman, Northern Samar",
-          leaders: ["Rey Vy"],
-          meetFrequency: "Weekly Friday evening",
-          dynamics: "Families and young adults"
-        },
-        {
-          location: "Manila — Metro",
-          leaders: ["Connect Team"],
-          meetFrequency: "Alternate Saturday morning",
-          dynamics: "Young professionals"
-        }
-      ]
-    },
-
-    thailand: {
-      label: "Thailand",
-      tagline: "Fellowship groups in the heart of Thailand.",
-      groups: [
-        {
-          location: "Chiang Mai — City",
-          leaders: ["Vincent Nimbalker"],
-          meetFrequency: "Weekly Thursday evening",
-          dynamics: "Expats and locals, English-speaking"
-        },
-        {
-          location: "Chiang Mai — Nimman",
-          leaders: ["Connect Team"],
-          meetFrequency: "Alternate Sunday brunch",
-          dynamics: "Young adults and families"
         }
       ]
     }

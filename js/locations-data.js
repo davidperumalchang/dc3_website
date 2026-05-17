@@ -9,12 +9,14 @@ window.DC3_LOCATIONS = {
   regions: {
     malaysia: {
       label: "Malaysia",
+      flag: "assets/bg/img/country/my.svg",
       tagline: "Where the Destiny C3 family began.",
       churches: [
         {
           name: "Destiny C3 Subang — Main Church",
           languages: ["English"],
           pastors: ["Clarance Sashi", "Deborah Clarance"],
+          photo: "assets/bg/img/pastors/clarance_deb.png",
           address:
             "S02-06, S02-07, S02-08, Impian Meridian, USJ 1, Jalan Subang 1, 47500 Subang Jaya",
           city: "Subang Jaya, Selangor",
@@ -93,6 +95,7 @@ window.DC3_LOCATIONS = {
 
     india: {
       label: "India",
+      flag: "assets/bg/img/country/in.svg",
       tagline: "Reaching India with the love of Jesus.",
       churches: [
         {
@@ -126,6 +129,7 @@ window.DC3_LOCATIONS = {
 
     philippines: {
       label: "Philippines",
+      flag: "assets/bg/img/country/ph.svg",
       tagline: "Family across the islands.",
       churches: [
         {
@@ -146,6 +150,7 @@ window.DC3_LOCATIONS = {
 
     thailand: {
       label: "Thailand",
+      flag: "assets/bg/img/country/th.svg",
       tagline: "Hope in the heart of Southeast Asia.",
       churches: [
         {

@@ -6,9 +6,9 @@
     <meta name="theme-color" content="#ffffff" />
     <meta
       name="description"
-      content="Find a Destiny C3 Connect Group near you — life done together across Malaysia, India, the Philippines and Thailand."
+      content="Partner with Destiny C3. Give online via DuitNow QR, Touch 'n Go, or direct bank transfer to RHB."
     />
-    <title>Connect Groups · Destiny C3</title>
+    <title>Give · Destiny C3</title>
 
     <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico" />
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png" />
@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="css/style.css?v=1.0.0" />
   </head>
   <body class="dc3-page">
+    <!-- ============== NAVBAR ============== -->
     <nav
       id="mainNav"
       class="navbar navbar-expand-lg navbar-dark fixed-top dc3-navbar"
@@ -71,7 +72,7 @@
             </li>
             <li class="nav-item dropdown dropdown-hover">
               <a
-                class="nav-link dropdown-toggle active"
+                class="nav-link dropdown-toggle"
                 href="#"
                 id="connectNavDropdown"
                 role="button"
@@ -81,11 +82,7 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="connectNavDropdown">
                 <li><a class="dropdown-item" href="contact.html">Get Connected</a></li>
-                <li>
-                  <a class="dropdown-item active" aria-current="page" href="connect-groups.html">
-                    Connect Groups
-                  </a>
-                </li>
+                <li><a class="dropdown-item" href="connect-groups.html">Connect Groups</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown dropdown-hover">
@@ -112,7 +109,7 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="give.html">Give</a>
+              <a class="nav-link active" aria-current="page" href="give.html">Give</a>
             </li>
             <li class="nav-item ms-lg-3">
               <a class="btn btn-dc3 btn-sm px-3" href="https://www.youtube.com/@destinyc3" target="_blank" rel="noopener noreferrer">
@@ -124,83 +121,189 @@
       </div>
     </nav>
 
-    <header class="dc3-page-hero jarallax" data-jarallax data-speed="0.3">
+    <!-- ============== PAGE HERO ============== -->
+    <header
+      class="dc3-page-hero jarallax"
+      data-jarallax
+      data-speed="0.3"
+    >
       <img class="jarallax-img" src="assets/bg/map/asia.png" alt="" />
       <div class="dc3-section__overlay"></div>
       <div class="container position-relative">
         <div class="row justify-content-center">
           <div class="col-lg-9 text-center">
-            <p class="section-eyebrow">Life Done Together</p>
+            <p class="section-eyebrow">Partner with us</p>
             <h1 class="section-title display-2 fw-bold">
-              Connect <span class="text-accent">groups</span> near you.
+              Give to the <span class="text-accent">mission</span>.
             </h1>
             <p class="lead mt-4 fw-light text-muted-2 mx-auto" style="max-width: 720px">
-              Connect Groups are small gatherings where we do life together —
-              share, pray, and grow in faith. Find a group near you across
-              Subang Jaya and the Klang Valley.
+              Your generosity fuels every Sunday service, every Connect Group,
+              every church plant, and every life touched by the gospel. Choose
+              a method below — every gift, big or small, makes a difference.
             </p>
           </div>
         </div>
       </div>
     </header>
 
-    <section
-      id="connect-groups"
-      class="dc3-connect-page dc3-connect__grid pt-3 pb-5"
-      data-active-region="malaysia"
-    >
+    <!-- ============== GIVING METHODS ============== -->
+    <section id="give" class="dc3-give-page py-6">
       <div class="container">
-        <!-- Region detail header (single region: Malaysia · Destiny C3 Subang) -->
-        <div class="dc3-region-summary mt-3" data-connect-region-summary>
-          <div class="dc3-region-summary__head">
-            <div class="dc3-region-summary__title-block">
-              <p class="section-eyebrow mb-2" data-connect-region-eyebrow>Connect groups in</p>
-              <h2 class="section-title display-4 fw-bold mb-0 dc3-region-summary__title">
-                <img
-                  class="dc3-region-summary__flag"
-                  data-connect-region-flag
-                  src="assets/bg/img/country/my.svg"
-                  alt=""
-                  aria-hidden="true"
-                  width="40"
-                  height="40"
-                />
-                <span data-connect-region-title>Destiny C3 Subang</span>
-              </h2>
-            </div>
-            <span class="dc3-region-summary__count" data-connect-region-count>
-              0 groups
-            </span>
-          </div>
+        <div class="text-center mb-5">
+          <p class="section-eyebrow">Three Ways to Give</p>
+          <h2 class="section-title display-4 fw-bold">
+            Choose what works for you.
+          </h2>
         </div>
 
-        <!-- Connect group cards grid -->
-        <div
-          class="dc3-church-grid dc3-connect-grid mt-4"
-          data-connect-grid
-          aria-live="polite"
-        ></div>
+        <!-- Note about transaction description -->
+        <aside class="dc3-give-note mb-5" role="note" aria-labelledby="giveNoteTitle">
+          <div class="dc3-give-note__icon" aria-hidden="true">
+            <i class="bi bi-info-circle-fill"></i>
+          </div>
+          <div class="dc3-give-note__body">
+            <h3 id="giveNoteTitle" class="dc3-give-note__title">
+              Please indicate your giving purpose
+            </h3>
+            <p class="dc3-give-note__text mb-0">
+              When making a transfer, add the purpose in the transaction
+              <strong>description / reference</strong> field so we can
+              allocate it correctly.
+            </p>
+            <ul class="dc3-give-note__tags" aria-label="Giving categories">
+              <li>Tithes &amp; Offerings</li>
+              <li>Miracle Offering</li>
+              <li>Building Fund</li>
+              <li>Missions</li>
+              <li>Other</li>
+            </ul>
+          </div>
+        </aside>
 
-        <!-- Empty state -->
-        <div class="dc3-church-empty d-none" data-connect-empty>
-          <i class="bi bi-people"></i>
-          <p class="mb-0">
-            No connect groups listed yet for this region. Check back soon!
-          </p>
+        <div class="dc3-give-grid">
+          <!-- DuitNow QR -->
+          <article class="dc3-give-card">
+            <header class="dc3-give-card__head">
+              <span class="dc3-give-card__badge">QR</span>
+              <h3 class="dc3-give-card__name">DuitNow QR</h3>
+              <p class="dc3-give-card__sub">
+                Scan with any DuitNow-supported banking app.
+              </p>
+            </header>
+            <div class="dc3-give-card__media">
+              <img
+                src="assets/bg/img/giving/duitnow.jpg"
+                alt="Destiny C3 DuitNow QR code"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <ol class="dc3-give-card__steps">
+              <li>Open your banking app</li>
+              <li>Scan the QR code above</li>
+              <li>Confirm the recipient and complete payment</li>
+            </ol>
+          </article>
+
+          <!-- Touch 'n Go -->
+          <article class="dc3-give-card">
+            <header class="dc3-give-card__head">
+              <span class="dc3-give-card__badge">QR</span>
+              <h3 class="dc3-give-card__name">Touch 'n Go eWallet</h3>
+              <p class="dc3-give-card__sub">
+                Scan with the Touch 'n Go eWallet app.
+              </p>
+            </header>
+            <div class="dc3-give-card__media">
+              <img
+                src="assets/bg/img/giving/tng.jpg"
+                alt="Destiny C3 Touch 'n Go QR code"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <ol class="dc3-give-card__steps">
+              <li>Open the Touch 'n Go eWallet app</li>
+              <li>Tap "Scan" and scan the QR code above</li>
+              <li>Enter the amount and confirm</li>
+            </ol>
+          </article>
+
+          <!-- RHB Bank Transfer -->
+          <article class="dc3-give-card dc3-give-card--bank">
+            <header class="dc3-give-card__head">
+              <span class="dc3-give-card__badge">Bank</span>
+              <h3 class="dc3-give-card__name">Direct Bank Transfer</h3>
+              <p class="dc3-give-card__sub">
+                Transfer to our RHB Bank account.
+              </p>
+            </header>
+            <div class="dc3-give-card__bank-logo">
+              <img
+                src="assets/bg/img/giving/rhb.png"
+                alt="RHB Bank"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <dl class="dc3-give-card__details">
+              <div class="dc3-give-card__row">
+                <dt>Bank</dt>
+                <dd>RHB Bank Berhad</dd>
+              </div>
+              <div class="dc3-give-card__row">
+                <dt>Account Holder</dt>
+                <dd>Destiny C3 Subang Jaya</dd>
+              </div>
+              <div class="dc3-give-card__row">
+                <dt>Account Number</dt>
+                <dd class="dc3-give-card__copy-row">
+                  <span class="dc3-give-card__value">2142 4000 0445 60</span>
+                  <button
+                    type="button"
+                    class="dc3-give-card__copy"
+                    data-copy-text="21424000044560"
+                    aria-label="Copy account number"
+                    title="Copy account number"
+                  >
+                    <i class="bi bi-clipboard" aria-hidden="true"></i>
+                    <span class="dc3-give-card__copy-label">Copy</span>
+                  </button>
+                </dd>
+              </div>
+              <div class="dc3-give-card__row">
+                <dt>SWIFT Code</dt>
+                <dd class="dc3-give-card__copy-row">
+                  <span class="dc3-give-card__value">RHBBMYKL</span>
+                  <button
+                    type="button"
+                    class="dc3-give-card__copy"
+                    data-copy-text="RHBBMYKL"
+                    aria-label="Copy SWIFT code"
+                    title="Copy SWIFT code"
+                  >
+                    <i class="bi bi-clipboard" aria-hidden="true"></i>
+                    <span class="dc3-give-card__copy-label">Copy</span>
+                  </button>
+                </dd>
+              </div>
+            </dl>
+          </article>
         </div>
       </div>
     </section>
 
+    <!-- ============== THANK YOU / CTA ============== -->
     <section class="dc3-about-cta py-6">
       <div class="container">
         <div class="dc3-about-cta__card text-center">
-          <p class="section-eyebrow">New here?</p>
+          <p class="section-eyebrow">Thank you</p>
           <h2 class="section-title display-4 fw-bold">
-            We'd love to help you find the right group.
+            Every gift moves the mission forward.
           </h2>
           <p class="lead mx-auto mt-3 text-muted-2" style="max-width: 640px">
-            Not sure which group fits? Reach out and our team will connect you
-            with a leader near you.
+            We're grateful for partners like you. If you'd like a giving
+            statement or have any questions, our team is here to help.
           </p>
           <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mt-4">
             <a href="contact.html" class="btn btn-dc3 btn-lg px-4">
@@ -214,6 +317,7 @@
       </div>
     </section>
 
+    <!-- ============== FOOTER ============== -->
     <footer class="dc3-footer pt-6 pb-4">
       <div class="container">
         <div class="row gy-4">
@@ -281,7 +385,6 @@
 
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="vendor/jarallax/jarallax.min.js"></script>
-    <script src="js/connect-groups-data.js?v=1.0.0"></script>
     <script src="js/main.js?v=1.0.0"></script>
   </body>
 </html>

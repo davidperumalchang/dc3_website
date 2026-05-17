@@ -12,12 +12,179 @@
   document.addEventListener("DOMContentLoaded", function () {
     initJarallax();
     initNavbarScroll();
-    initConnectNavDropdown();
+    initHoverDropdowns();
     initFooterYear();
     initSmoothScrollOffset();
+    initLocationsTeaserHover();
     initLocationsExplorer();
     initConnectGroupsExplorer();
+    initOurTeamExplorer();
+    initCopyButtons();
+    initMinistryModal();
   });
+
+  /* =========================================================
+     MINISTRY DETAIL MODAL (about.html)
+     - Reads window.DC3_MINISTRIES
+     - Click/Enter/Space on a .dc3-ministry-card[data-ministry]
+       opens a shared Bootstrap modal populated with that ministry's
+       icon, name, tagline, body paragraphs, plus a "Get Connected" CTA.
+     ========================================================= */
+  function initMinistryModal() {
+    var cards = document.querySelectorAll(
+      ".dc3-ministry-card[data-ministry]"
+    );
+    if (!cards.length) return;
+
+    var modalEl = document.getElementById("ministryModal");
+    if (!modalEl) return;
+
+    var data = window.DC3_MINISTRIES;
+    if (!data) return;
+
+    var bsAvailable = window.bootstrap && window.bootstrap.Modal;
+    var modal = bsAvailable ? new window.bootstrap.Modal(modalEl) : null;
+
+    var iconSlotEl = modalEl.querySelector("[data-ministry-icon-slot]");
+    var nameEl = modalEl.querySelector("[data-ministry-name]");
+    var taglineEl = modalEl.querySelector("[data-ministry-tagline]");
+    var bodyEl = modalEl.querySelector("[data-ministry-body]");
+
+    function openMinistry(key) {
+      var m = data[key];
+      if (!m) return;
+
+      if (iconSlotEl) {
+        if (m.iconSvg) {
+          iconSlotEl.innerHTML = m.iconSvg;
+        } else if (m.icon) {
+          iconSlotEl.innerHTML =
+            '<i class="bi ' + m.icon + '" aria-hidden="true"></i>';
+        } else {
+          iconSlotEl.innerHTML =
+            '<i class="bi bi-circle" aria-hidden="true"></i>';
+        }
+      }
+      if (nameEl) nameEl.textContent = m.name || "";
+      if (taglineEl) taglineEl.textContent = m.tagline || "";
+
+      if (bodyEl) {
+        bodyEl.innerHTML = "";
+        (m.body || []).forEach(function (para) {
+          var p = document.createElement("p");
+          p.textContent = para;
+          bodyEl.appendChild(p);
+        });
+      }
+
+      if (modal) modal.show();
+    }
+
+    cards.forEach(function (card) {
+      var key = card.getAttribute("data-ministry");
+      if (!key || !data[key]) return;
+
+      card.setAttribute("role", "button");
+      card.setAttribute("tabindex", "0");
+      card.setAttribute(
+        "aria-label",
+        "View " + data[key].name + " details"
+      );
+
+      card.addEventListener("click", function () {
+        openMinistry(key);
+      });
+
+      card.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          openMinistry(key);
+        }
+      });
+    });
+  }
+
+  function initCopyButtons() {
+    var buttons = document.querySelectorAll("[data-copy-text]");
+    if (!buttons.length) return;
+
+    buttons.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var text = btn.getAttribute("data-copy-text") || "";
+        if (!text) return;
+
+        copyToClipboard(text).then(function (ok) {
+          if (!ok) return;
+          showCopiedFeedback(btn);
+        });
+      });
+    });
+  }
+
+  function copyToClipboard(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(text)
+        .then(function () { return true; })
+        .catch(function () { return legacyCopy(text); });
+    }
+    return Promise.resolve(legacyCopy(text));
+  }
+
+  function legacyCopy(text) {
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "absolute";
+    ta.style.left = "-9999px";
+    document.body.appendChild(ta);
+    ta.select();
+    var ok = false;
+    try { ok = document.execCommand("copy"); } catch (err) { ok = false; }
+    document.body.removeChild(ta);
+    return ok;
+  }
+
+  function showCopiedFeedback(btn) {
+    var icon = btn.querySelector(".bi");
+    var label = btn.querySelector(".dc3-give-card__copy-label");
+    var originalIconClass = icon ? icon.className : "";
+    var originalLabel = label ? label.textContent : "";
+
+    btn.classList.add("is-copied");
+    if (icon) icon.className = "bi bi-check-lg";
+    if (label) label.textContent = "Copied";
+
+    if (btn._copyTimer) clearTimeout(btn._copyTimer);
+    btn._copyTimer = setTimeout(function () {
+      btn.classList.remove("is-copied");
+      if (icon && originalIconClass) icon.className = originalIconClass;
+      if (label) label.textContent = originalLabel;
+    }, 1600);
+  }
+
+  function initLocationsTeaserHover() {
+    var teaser = document.querySelector("[data-locations-teaser]");
+    if (!teaser) return;
+
+    var chips = teaser.querySelectorAll(".dc3-locations-teaser__chip[data-region]");
+    if (!chips.length) return;
+
+    function setRegion(region) {
+      if (region) {
+        teaser.setAttribute("data-hovered-region", region);
+      } else {
+        teaser.removeAttribute("data-hovered-region");
+      }
+    }
+
+    chips.forEach(function (chip) {
+      var region = chip.getAttribute("data-region");
+      chip.addEventListener("mouseenter", function () { setRegion(region); });
+      chip.addEventListener("mouseleave", function () { setRegion(null); });
+      chip.addEventListener("focus", function () { setRegion(region); });
+      chip.addEventListener("blur", function () { setRegion(null); });
+    });
+  }
 
   function initJarallax() {
     if (typeof window.jarallax !== "function") {
@@ -46,13 +213,15 @@
     });
   }
 
-  function initConnectNavDropdown() {
-    var toggle = document.getElementById("connectNavDropdown");
-    if (!toggle) return;
+  function initHoverDropdowns() {
+    var dropdowns = document.querySelectorAll(".dropdown-hover");
+    dropdowns.forEach(setupHoverDropdown);
+  }
 
-    var parent = toggle.closest(".dropdown");
-    var menu = parent && parent.querySelector(".dropdown-menu");
-    if (!parent || !menu) return;
+  function setupHoverDropdown(parent) {
+    var toggle = parent.querySelector(".dropdown-toggle");
+    var menu = parent.querySelector(".dropdown-menu");
+    if (!toggle || !menu) return;
 
     var desktopMq = window.matchMedia("(min-width: 992px)");
     var bsDropdown = null;
@@ -167,6 +336,7 @@
     var titleEl = grid.querySelector("[data-region-title]");
     var eyebrowEl = grid.querySelector("[data-region-eyebrow]");
     var countEl = grid.querySelector("[data-region-count]");
+    var flagEl = grid.querySelector("[data-region-flag]");
 
     if (!listEl || !cardsEl) return;
 
@@ -203,41 +373,43 @@
         if (!region) return;
 
         var count = (region.churches && region.churches.length) || 0;
-        var li = document.createElement("li");
-        li.className = "dc3-country";
-        li.setAttribute("data-region", key);
-        li.setAttribute("tabindex", "0");
-        li.setAttribute("role", "button");
-        li.setAttribute("aria-pressed", "false");
-        li.setAttribute(
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "dc3-country-pill";
+        btn.setAttribute("data-region", key);
+        btn.setAttribute("role", "tab");
+        btn.setAttribute("aria-selected", "false");
+        btn.setAttribute(
           "aria-label",
           region.label + " — " + count + " " + (count === 1 ? "church" : "churches")
         );
 
-        var head = document.createElement("div");
-        head.className = "dc3-country__head";
-
-        var name = document.createElement("h3");
-        name.className = "dc3-country__name";
-        name.textContent = region.label;
-
-        var badge = document.createElement("span");
-        badge.className = "dc3-country__badge";
-        badge.textContent = count + " " + (count === 1 ? "church" : "churches");
-
-        head.appendChild(name);
-        head.appendChild(badge);
-        li.appendChild(head);
-
-        if (region.tagline) {
-          var tag = document.createElement("p");
-          tag.className = "dc3-country__tagline";
-          tag.textContent = region.tagline;
-          li.appendChild(tag);
+        if (region.flag) {
+          var flag = document.createElement("img");
+          flag.className = "dc3-country-pill__flag";
+          flag.src = region.flag;
+          flag.alt = "";
+          flag.setAttribute("aria-hidden", "true");
+          flag.setAttribute("loading", "lazy");
+          flag.setAttribute("decoding", "async");
+          flag.width = 18;
+          flag.height = 18;
+          btn.appendChild(flag);
         }
 
-        attachRegionHandlers(li, key);
-        listEl.appendChild(li);
+        var name = document.createElement("span");
+        name.className = "dc3-country-pill__name";
+        name.textContent = region.label;
+        btn.appendChild(name);
+
+        var badge = document.createElement("span");
+        badge.className = "dc3-country-pill__count";
+        badge.textContent = count;
+        badge.setAttribute("aria-hidden", "true");
+        btn.appendChild(badge);
+
+        attachRegionHandlers(btn, key);
+        listEl.appendChild(btn);
       });
     }
 
@@ -262,11 +434,11 @@
 
       grid.setAttribute("data-active-region", safe);
 
-      var items = listEl.querySelectorAll(".dc3-country");
-      items.forEach(function (li) {
-        var isActive = li.getAttribute("data-region") === safe;
-        li.classList.toggle("is-active", isActive);
-        li.setAttribute("aria-pressed", isActive ? "true" : "false");
+      var items = listEl.querySelectorAll(".dc3-country-pill");
+      items.forEach(function (btn) {
+        var isActive = btn.getAttribute("data-region") === safe;
+        btn.classList.toggle("is-active", isActive);
+        btn.setAttribute("aria-selected", isActive ? "true" : "false");
       });
 
       if (titleEl) titleEl.textContent = region.label;
@@ -275,6 +447,14 @@
         var n = (region.churches && region.churches.length) || 0;
         countEl.textContent = n + " " + (n === 1 ? "church" : "churches");
       }
+      if (flagEl) {
+        if (region.flag) {
+          flagEl.setAttribute("src", region.flag);
+          flagEl.classList.remove("d-none");
+        } else {
+          flagEl.classList.add("d-none");
+        }
+      }
 
       renderChurches(region.churches || []);
 
@@ -282,6 +462,38 @@
         try {
           window.history.replaceState(null, "", "#" + safe);
         } catch (err) { /* no-op */ }
+      }
+
+      if (opts.updateHash) {
+        scrollToRegionStart();
+      }
+    }
+
+    function scrollToRegionStart() {
+      var summary = grid.querySelector("[data-region-summary]");
+      if (!summary) return;
+
+      var nav = document.getElementById("mainNav");
+      var pills = document.querySelector(".dc3-country-pills-wrap");
+      var navH = nav ? nav.offsetHeight : 64;
+      var pillsH = pills ? pills.offsetHeight : 0;
+      var gap = 16;
+
+      var top = summary.getBoundingClientRect().top + window.pageYOffset
+        - navH - pillsH - gap;
+      if (top < 0) top = 0;
+
+      var prefersReduced = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+      try {
+        window.scrollTo({
+          top: top,
+          behavior: prefersReduced ? "auto" : "smooth"
+        });
+      } catch (err) {
+        window.scrollTo(0, top);
       }
     }
 
@@ -450,19 +662,26 @@
     }
   }
 
-  function initConnectGroupsExplorer() {
-    var grid = document.querySelector(".dc3-connect__grid");
+  /* =========================================================
+     OUR TEAM EXPLORER
+     - Reads window.DC3_LOCATIONS (shared with locations.html)
+     - Renders country pills + pastor cards (one per church)
+     - Click a pill to swap region; deep-links via hash
+     ========================================================= */
+  function initOurTeamExplorer() {
+    var grid = document.querySelector(".dc3-our-team__grid");
     if (!grid) return;
 
-    var data = window.DC3_CONNECT_GROUPS;
+    var data = window.DC3_LOCATIONS;
     if (!data || !data.regions) return;
 
-    var listEl = grid.querySelector("[data-connect-country-list]");
-    var cardsEl = grid.querySelector("[data-connect-grid]");
-    var emptyEl = grid.querySelector("[data-connect-empty]");
-    var titleEl = grid.querySelector("[data-connect-region-title]");
-    var eyebrowEl = grid.querySelector("[data-connect-region-eyebrow]");
-    var countEl = grid.querySelector("[data-connect-region-count]");
+    var listEl = grid.querySelector("[data-our-team-country-list]");
+    var cardsEl = grid.querySelector("[data-our-team-grid]");
+    var emptyEl = grid.querySelector("[data-our-team-empty]");
+    var titleEl = grid.querySelector("[data-our-team-region-title]");
+    var eyebrowEl = grid.querySelector("[data-our-team-region-eyebrow]");
+    var countEl = grid.querySelector("[data-our-team-region-count]");
+    var flagEl = grid.querySelector("[data-our-team-region-flag]");
 
     if (!listEl || !cardsEl) return;
 
@@ -498,42 +717,44 @@
         var region = data.regions[key];
         if (!region) return;
 
-        var count = (region.groups && region.groups.length) || 0;
-        var li = document.createElement("li");
-        li.className = "dc3-country";
-        li.setAttribute("data-region", key);
-        li.setAttribute("tabindex", "0");
-        li.setAttribute("role", "button");
-        li.setAttribute("aria-pressed", "false");
-        li.setAttribute(
+        var count = (region.churches && region.churches.length) || 0;
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "dc3-country-pill";
+        btn.setAttribute("data-region", key);
+        btn.setAttribute("role", "tab");
+        btn.setAttribute("aria-selected", "false");
+        btn.setAttribute(
           "aria-label",
-          region.label + " — " + count + " " + (count === 1 ? "group" : "groups")
+          region.label + " — " + count + " " + (count === 1 ? "church" : "churches")
         );
 
-        var head = document.createElement("div");
-        head.className = "dc3-country__head";
-
-        var name = document.createElement("h3");
-        name.className = "dc3-country__name";
-        name.textContent = region.label;
-
-        var badge = document.createElement("span");
-        badge.className = "dc3-country__badge";
-        badge.textContent = count + " " + (count === 1 ? "group" : "groups");
-
-        head.appendChild(name);
-        head.appendChild(badge);
-        li.appendChild(head);
-
-        if (region.tagline) {
-          var tag = document.createElement("p");
-          tag.className = "dc3-country__tagline";
-          tag.textContent = region.tagline;
-          li.appendChild(tag);
+        if (region.flag) {
+          var flag = document.createElement("img");
+          flag.className = "dc3-country-pill__flag";
+          flag.src = region.flag;
+          flag.alt = "";
+          flag.setAttribute("aria-hidden", "true");
+          flag.setAttribute("loading", "lazy");
+          flag.setAttribute("decoding", "async");
+          flag.width = 18;
+          flag.height = 18;
+          btn.appendChild(flag);
         }
 
-        attachRegionHandlers(li, key);
-        listEl.appendChild(li);
+        var name = document.createElement("span");
+        name.className = "dc3-country-pill__name";
+        name.textContent = region.label;
+        btn.appendChild(name);
+
+        var badge = document.createElement("span");
+        badge.className = "dc3-country-pill__count";
+        badge.textContent = count;
+        badge.setAttribute("aria-hidden", "true");
+        btn.appendChild(badge);
+
+        attachRegionHandlers(btn, key);
+        listEl.appendChild(btn);
       });
     }
 
@@ -558,18 +779,278 @@
 
       grid.setAttribute("data-active-region", safe);
 
-      var items = listEl.querySelectorAll(".dc3-country");
-      items.forEach(function (li) {
-        var isActive = li.getAttribute("data-region") === safe;
-        li.classList.toggle("is-active", isActive);
-        li.setAttribute("aria-pressed", isActive ? "true" : "false");
+      var items = listEl.querySelectorAll(".dc3-country-pill");
+      items.forEach(function (btn) {
+        var isActive = btn.getAttribute("data-region") === safe;
+        btn.classList.toggle("is-active", isActive);
+        btn.setAttribute("aria-selected", isActive ? "true" : "false");
       });
+
+      if (titleEl) titleEl.textContent = region.label;
+      if (eyebrowEl) eyebrowEl.textContent = "Pastors in";
+      if (countEl) {
+        var n = (region.churches && region.churches.length) || 0;
+        countEl.textContent = n + " " + (n === 1 ? "church" : "churches");
+      }
+      if (flagEl) {
+        if (region.flag) {
+          flagEl.setAttribute("src", region.flag);
+          flagEl.classList.remove("d-none");
+        } else {
+          flagEl.classList.add("d-none");
+        }
+      }
+
+      renderTeam(region.churches || []);
+
+      if (opts.updateHash && window.history && window.history.replaceState) {
+        try {
+          window.history.replaceState(null, "", "#" + safe);
+        } catch (err) { /* no-op */ }
+      }
+
+      if (opts.updateHash) {
+        scrollToRegionStart();
+      }
+    }
+
+    function renderTeam(churches) {
+      cardsEl.innerHTML = "";
+
+      if (!churches.length) {
+        cardsEl.classList.add("d-none");
+        if (emptyEl) emptyEl.classList.remove("d-none");
+        return;
+      }
+
+      cardsEl.classList.remove("d-none");
+      if (emptyEl) emptyEl.classList.add("d-none");
+
+      churches.forEach(function (church) {
+        cardsEl.appendChild(buildPastorCard(church));
+      });
+    }
+
+    function buildPastorCard(church) {
+      var card = document.createElement("article");
+      card.className = "dc3-our-team-card";
+
+      var photo = document.createElement("div");
+      photo.className = "dc3-our-team-card__photo";
+      if (church.photo) {
+        var img = document.createElement("img");
+        img.src = church.photo;
+        img.alt = formatPastorNames(church.pastors) + ", " + church.name;
+        img.setAttribute("loading", "lazy");
+        img.setAttribute("decoding", "async");
+        photo.appendChild(img);
+      } else {
+        photo.classList.add("dc3-our-team-card__photo--placeholder");
+        photo.innerHTML = '<i class="bi bi-person-fill" aria-hidden="true"></i>';
+      }
+      card.appendChild(photo);
+
+      var content = document.createElement("div");
+      content.className = "dc3-our-team-card__content";
+
+      var church_p = document.createElement("p");
+      church_p.className = "dc3-our-team-card__church";
+      church_p.textContent = church.name;
+      content.appendChild(church_p);
+
+      var names = document.createElement("h4");
+      names.className = "dc3-our-team-card__names";
+      names.textContent = formatPastorNames(church.pastors);
+      content.appendChild(names);
+
+      if (church.city) {
+        var city = document.createElement("p");
+        city.className = "dc3-our-team-card__city";
+        city.textContent = church.city;
+        content.appendChild(city);
+      }
+
+      card.appendChild(content);
+      return card;
+    }
+
+    function formatPastorNames(pastors) {
+      if (!pastors || !pastors.length) return "Pastoral Team";
+      if (pastors.length === 1) {
+        return "Pastor " + pastors[0];
+      }
+      var firstNames = pastors.map(function (n) {
+        return n.split(" ")[0];
+      });
+      if (firstNames.length === 2) {
+        return "Pastors " + firstNames[0] + " & " + firstNames[1];
+      }
+      var last = firstNames[firstNames.length - 1];
+      return "Pastors " + firstNames.slice(0, -1).join(", ") + " & " + last;
+    }
+
+    function scrollToRegionStart() {
+      var summary = grid.querySelector("[data-our-team-region-summary]");
+      if (!summary) return;
+
+      var nav = document.getElementById("mainNav");
+      var pills = grid.querySelector(".dc3-country-pills-wrap");
+      var navH = nav ? nav.offsetHeight : 64;
+      var pillsH = pills ? pills.offsetHeight : 0;
+      var gap = 16;
+
+      var top = summary.getBoundingClientRect().top + window.pageYOffset
+        - navH - pillsH - gap;
+      if (top < 0) top = 0;
+
+      var prefersReduced = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+      try {
+        window.scrollTo({
+          top: top,
+          behavior: prefersReduced ? "auto" : "smooth"
+        });
+      } catch (err) {
+        window.scrollTo(0, top);
+      }
+    }
+  }
+
+  function initConnectGroupsExplorer() {
+    var grid = document.querySelector(".dc3-connect__grid");
+    if (!grid) return;
+
+    var data = window.DC3_CONNECT_GROUPS;
+    if (!data || !data.regions) return;
+
+    var listEl = grid.querySelector("[data-connect-country-list]");
+    var cardsEl = grid.querySelector("[data-connect-grid]");
+    var emptyEl = grid.querySelector("[data-connect-empty]");
+    var titleEl = grid.querySelector("[data-connect-region-title]");
+    var eyebrowEl = grid.querySelector("[data-connect-region-eyebrow]");
+    var countEl = grid.querySelector("[data-connect-region-count]");
+    var flagEl = grid.querySelector("[data-connect-region-flag]");
+
+    if (!cardsEl) return;
+
+    var allowedRegions = data.order && data.order.length
+      ? data.order.slice()
+      : Object.keys(data.regions);
+
+    var defaultRegion = allowedRegions[0] || "";
+    var hashRegion = parseHashRegion();
+    var initialRegion = (hashRegion && allowedRegions.indexOf(hashRegion) !== -1)
+      ? hashRegion
+      : defaultRegion;
+
+    if (listEl) renderCountryList();
+    setRegion(initialRegion);
+
+    window.addEventListener("hashchange", function () {
+      var next = parseHashRegion();
+      if (next && allowedRegions.indexOf(next) !== -1) {
+        setRegion(next);
+      }
+    });
+
+    function parseHashRegion() {
+      var raw = (window.location.hash || "").replace(/^#/, "").toLowerCase();
+      return raw && allowedRegions.indexOf(raw) !== -1 ? raw : "";
+    }
+
+    function renderCountryList() {
+      listEl.innerHTML = "";
+
+      allowedRegions.forEach(function (key) {
+        var region = data.regions[key];
+        if (!region) return;
+
+        var count = (region.groups && region.groups.length) || 0;
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "dc3-country-pill";
+        btn.setAttribute("data-region", key);
+        btn.setAttribute("role", "tab");
+        btn.setAttribute("aria-selected", "false");
+        btn.setAttribute(
+          "aria-label",
+          region.label + " — " + count + " " + (count === 1 ? "group" : "groups")
+        );
+
+        if (region.flag) {
+          var flag = document.createElement("img");
+          flag.className = "dc3-country-pill__flag";
+          flag.src = region.flag;
+          flag.alt = "";
+          flag.setAttribute("aria-hidden", "true");
+          flag.setAttribute("loading", "lazy");
+          flag.setAttribute("decoding", "async");
+          flag.width = 18;
+          flag.height = 18;
+          btn.appendChild(flag);
+        }
+
+        var name = document.createElement("span");
+        name.className = "dc3-country-pill__name";
+        name.textContent = region.label;
+        btn.appendChild(name);
+
+        var badge = document.createElement("span");
+        badge.className = "dc3-country-pill__count";
+        badge.textContent = count;
+        badge.setAttribute("aria-hidden", "true");
+        btn.appendChild(badge);
+
+        attachRegionHandlers(btn, key);
+        listEl.appendChild(btn);
+      });
+    }
+
+    function attachRegionHandlers(el, key) {
+      el.addEventListener("click", function () {
+        setRegion(key, { updateHash: true });
+      });
+
+      el.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          setRegion(key, { updateHash: true });
+        }
+      });
+    }
+
+    function setRegion(key, opts) {
+      opts = opts || {};
+      var safe = allowedRegions.indexOf(key) !== -1 ? key : defaultRegion;
+      var region = data.regions[safe];
+      if (!region) return;
+
+      grid.setAttribute("data-active-region", safe);
+
+      if (listEl) {
+        var items = listEl.querySelectorAll(".dc3-country-pill");
+        items.forEach(function (btn) {
+          var isActive = btn.getAttribute("data-region") === safe;
+          btn.classList.toggle("is-active", isActive);
+          btn.setAttribute("aria-selected", isActive ? "true" : "false");
+        });
+      }
 
       if (titleEl) titleEl.textContent = region.label;
       if (eyebrowEl) eyebrowEl.textContent = "Connect groups in";
       if (countEl) {
         var n = (region.groups && region.groups.length) || 0;
         countEl.textContent = n + " " + (n === 1 ? "group" : "groups");
+      }
+      if (flagEl) {
+        if (region.flag) {
+          flagEl.setAttribute("src", region.flag);
+          flagEl.classList.remove("d-none");
+        } else {
+          flagEl.classList.add("d-none");
+        }
       }
 
       renderGroups(region.groups || []);
@@ -578,6 +1059,38 @@
         try {
           window.history.replaceState(null, "", "#" + safe);
         } catch (err) { /* no-op */ }
+      }
+
+      if (opts.updateHash) {
+        scrollToRegionStart();
+      }
+    }
+
+    function scrollToRegionStart() {
+      var summary = grid.querySelector("[data-connect-region-summary]");
+      if (!summary) return;
+
+      var nav = document.getElementById("mainNav");
+      var pills = grid.querySelector(".dc3-country-pills-wrap");
+      var navH = nav ? nav.offsetHeight : 64;
+      var pillsH = pills ? pills.offsetHeight : 0;
+      var gap = 16;
+
+      var top = summary.getBoundingClientRect().top + window.pageYOffset
+        - navH - pillsH - gap;
+      if (top < 0) top = 0;
+
+      var prefersReduced = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+      try {
+        window.scrollTo({
+          top: top,
+          behavior: prefersReduced ? "auto" : "smooth"
+        });
+      } catch (err) {
+        window.scrollTo(0, top);
       }
     }
 

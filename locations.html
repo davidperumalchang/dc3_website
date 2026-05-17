@@ -54,8 +54,21 @@
             <li class="nav-item">
               <a class="nav-link" href="index.html">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
+            <li class="nav-item dropdown dropdown-hover">
+              <a
+                class="nav-link dropdown-toggle"
+                href="about.html"
+                id="aboutNavDropdown"
+                role="button"
+                aria-expanded="false"
+              >
+                About
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="aboutNavDropdown">
+                <li><a class="dropdown-item" href="about.html#believe">What We Believe</a></li>
+                <li><a class="dropdown-item" href="about.html#ministries">Ministries</a></li>
+                <li><a class="dropdown-item" href="our-team.html">Our Team</a></li>
+              </ul>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="locations.html">Our Locations</a>
@@ -71,15 +84,38 @@
                 Connect
               </a>
               <ul class="dropdown-menu" aria-labelledby="connectNavDropdown">
-                <li><a class="dropdown-item" href="index.html#connect">Get Connected</a></li>
+                <li><a class="dropdown-item" href="contact.html">Get Connected</a></li>
                 <li><a class="dropdown-item" href="connect-groups.html">Connect Groups</a></li>
               </ul>
             </li>
+            <li class="nav-item dropdown dropdown-hover">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="mediaNavDropdown"
+                role="button"
+                aria-expanded="false"
+              >
+                Media
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="mediaNavDropdown">
+                <li>
+                  <a class="dropdown-item" href="https://www.youtube.com/@destinyc3" target="_blank" rel="noopener noreferrer">
+                    Watch Live <i class="bi bi-arrow-up-right ms-1" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="https://open.spotify.com/show/4MgphvFGxIaLRP8nHpZ6h2?si=iIZAAWfaR5C_NvtO0m2TMA" target="_blank" rel="noopener noreferrer">
+                    Podcast <i class="bi bi-arrow-up-right ms-1" aria-hidden="true"></i>
+                  </a>
+                </li>
+              </ul>
+            </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html#give">Give</a>
+              <a class="nav-link" href="give.html">Give</a>
             </li>
             <li class="nav-item ms-lg-3">
-              <a class="btn btn-dc3 btn-sm px-3" href="index.html#watch">
+              <a class="btn btn-dc3 btn-sm px-3" href="https://www.youtube.com/@destinyc3" target="_blank" rel="noopener noreferrer">
                 <i class="bi bi-play-fill"></i> Watch Live
               </a>
             </li>
@@ -110,68 +146,41 @@
     </header>
 
     <!-- ============== LOCATIONS EXPLORER ============== -->
-    <section id="locations" class="dc3-locations-page py-6">
-      <div
-        class="container dc3-locations__grid"
-        data-active-region="malaysia"
-      >
-        <!-- Map + country selector -->
-        <div class="row align-items-start g-5">
-          <div class="col-lg-7">
-            <div class="dc3-map-stack">
-              <img
-                class="dc3-map-stack__base"
-                src="assets/bg/map/asia.png"
-                alt="Map of Asia showing Destiny C3 locations"
-              />
-              <img
-                class="dc3-map-stack__overlay"
-                data-region="malaysia"
-                src="assets/bg/map/malaysia.png"
-                alt=""
-                aria-hidden="true"
-                loading="lazy"
-              />
-              <img
-                class="dc3-map-stack__overlay"
-                data-region="india"
-                src="assets/bg/map/india.png"
-                alt=""
-                aria-hidden="true"
-                loading="lazy"
-              />
-              <img
-                class="dc3-map-stack__overlay"
-                data-region="philippines"
-                src="assets/bg/map/philippines.png"
-                alt=""
-                aria-hidden="true"
-                loading="lazy"
-              />
-              <img
-                class="dc3-map-stack__overlay"
-                data-region="thailand"
-                src="assets/bg/map/thailand.png"
-                alt=""
-                aria-hidden="true"
-                loading="lazy"
-              />
-            </div>
-          </div>
-
-          <div class="col-lg-5">
-            <p class="section-eyebrow mb-3">Pick a Country</p>
-            <ul class="dc3-country-list" role="list" data-country-list></ul>
-          </div>
+    <section
+      id="locations"
+      class="dc3-locations-page dc3-locations__grid pt-3 pb-5"
+      data-active-region="malaysia"
+    >
+      <!-- Sticky country pill bar -->
+      <div class="dc3-country-pills-wrap">
+        <div class="container">
+          <p class="section-eyebrow text-center mb-3 mt-3">Pick a Country</p>
+          <div
+            class="dc3-country-pills"
+            role="tablist"
+            aria-label="Filter churches by country"
+            data-country-list
+          ></div>
         </div>
+      </div>
 
+      <div class="container">
         <!-- Selected country detail header -->
-        <div class="dc3-region-summary mt-6" data-region-summary>
+        <div class="dc3-region-summary mt-5" data-region-summary>
           <div class="dc3-region-summary__head">
-            <div>
+            <div class="dc3-region-summary__title-block">
               <p class="section-eyebrow mb-2" data-region-eyebrow>Churches in</p>
-              <h2 class="section-title display-4 fw-bold mb-0" data-region-title>
-                Malaysia
+              <h2 class="section-title display-4 fw-bold mb-0 dc3-region-summary__title">
+                <img
+                  class="dc3-region-summary__flag"
+                  data-region-flag
+                  src="assets/bg/img/country/my.svg"
+                  alt=""
+                  aria-hidden="true"
+                  width="40"
+                  height="40"
+                />
+                <span data-region-title>Malaysia</span>
               </h2>
             </div>
             <span class="dc3-region-summary__count" data-region-count>
@@ -263,16 +272,16 @@
           <div class="col-6 col-lg-2">
             <h6 class="footer-heading">About</h6>
             <ul class="list-unstyled footer-links">
-              <li><a href="about.html">Our Story</a></li>
-              <li><a href="about.html">We Believe</a></li>
-              <li><a href="about.html">Our Team</a></li>
+              <li><a href="about.html#believe">What We Believe</a></li>
+              <li><a href="about.html#ministries">Ministries</a></li>
+              <li><a href="our-team.html">Our Team</a></li>
             </ul>
           </div>
 
           <div class="col-6 col-lg-2">
             <h6 class="footer-heading">Connect</h6>
             <ul class="list-unstyled footer-links">
-              <li><a href="index.html#connect">Get Connected</a></li>
+              <li><a href="contact.html">Get Connected</a></li>
               <li><a href="connect-groups.html">Connect Groups</a></li>
             </ul>
           </div>
@@ -280,18 +289,15 @@
           <div class="col-6 col-lg-2">
             <h6 class="footer-heading">Media</h6>
             <ul class="list-unstyled footer-links">
-              <li><a href="index.html#watch">Watch Live</a></li>
-              <li><a href="index.html#watch">Music</a></li>
-              <li><a href="index.html#watch">Podcast</a></li>
+              <li><a href="https://www.youtube.com/@destinyc3">Watch Live</a></li>
+              <li><a href="https://open.spotify.com/show/4MgphvFGxIaLRP8nHpZ6h2?si=iIZAAWfaR5C_NvtO0m2TMA">Podcast</a></li>
             </ul>
           </div>
 
           <div class="col-6 col-lg-2">
             <h6 class="footer-heading">Give</h6>
             <ul class="list-unstyled footer-links">
-              <li><a href="index.html#give">Give Online</a></li>
-              <li><a href="index.html#give">Missions</a></li>
-              <li><a href="index.html#give">Partner</a></li>
+              <li><a href="give.html">Give Online</a></li>
             </ul>
           </div>
         </div>
@@ -300,7 +306,7 @@
 
         <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-muted-2 small">
           <span>&copy; <span id="year"></span> Destiny C3. All rights reserved.</span>
-          <span>Privacy Notice · Terms</span>
+          <span><a href="privacy.html" class="footer-legal-link">Privacy Notice</a></span>
         </div>
       </div>
     </footer>
