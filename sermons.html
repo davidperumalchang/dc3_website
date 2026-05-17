@@ -6,9 +6,9 @@
     <meta name="theme-color" content="#ffffff" />
     <meta
       name="description"
-      content="Meet the team of Destiny C3 — pastors and shepherds across Malaysia, India, the Philippines and Thailand."
+      content="Watch the latest sermons from Destiny C3. A growing library of Sunday messages — be encouraged, challenged, and built up in faith."
     />
-    <title>Our Team · Destiny C3</title>
+    <title>Sermons · Destiny C3</title>
 
     <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico" />
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png" />
@@ -53,7 +53,7 @@
             </li>
             <li class="nav-item dropdown dropdown-hover">
               <a
-                class="nav-link dropdown-toggle active"
+                class="nav-link dropdown-toggle"
                 href="about.html"
                 id="aboutNavDropdown"
                 role="button"
@@ -64,7 +64,7 @@
               <ul class="dropdown-menu" aria-labelledby="aboutNavDropdown">
                 <li><a class="dropdown-item" href="about.html#believe">What We Believe</a></li>
                 <li><a class="dropdown-item" href="about.html#ministries">Ministries</a></li>
-                <li><a class="dropdown-item active" aria-current="page" href="our-team.html">Our Team</a></li>
+                <li><a class="dropdown-item" href="our-team.html">Our Team</a></li>
               </ul>
             </li>
             <li class="nav-item">
@@ -86,7 +86,7 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="sermons.html">Sermons</a>
+              <a class="nav-link active" aria-current="page" href="sermons.html">Sermons</a>
             </li>
             <li class="nav-item dropdown dropdown-hover">
               <a
@@ -135,135 +135,112 @@
       <div class="container position-relative">
         <div class="row justify-content-center">
           <div class="col-lg-9 text-center">
-            <p class="section-eyebrow">Our Team</p>
+            <p class="section-eyebrow">Watch &amp; Listen</p>
             <h1 class="section-title display-2 fw-bold">
-              Meet the team behind Destiny C3.
+              Latest <span class="text-accent">sermons</span>.
             </h1>
             <p class="lead mt-4 fw-light text-muted-2 mx-auto" style="max-width: 720px">
-              Pastors and leaders across Malaysia, India, the
-              Philippines and Thailand — building God's house and raising
-              God's people.
+              A growing library of Sunday messages — be encouraged, challenged,
+              and built up in faith. Tap any sermon to watch it right here.
             </p>
           </div>
         </div>
       </div>
     </header>
 
-    <!-- ============== LEAD PASTORS ============== -->
-    <section class="dc3-our-team-lead py-6">
+    <!-- ============== SERMONS GRID ============== -->
+    <section class="dc3-sermons-page pt-5 pb-5">
       <div class="container">
-        <div class="row align-items-center g-5">
-          <div class="col-lg-6">
-            <figure class="dc3-our-team-feature">
-              <img
-                class="dc3-our-team-feature__img"
-                src="assets/bg/img/pastors/clarance_deb.png"
-                alt="Pastors Clarance and Deborah, lead pastors of Destiny C3"
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
-          </div>
-          <div class="col-lg-6">
-            <p class="section-eyebrow">Lead Pastors</p>
-            <h2 class="section-title display-4 fw-bold">
-              Pastors Clarance &amp; Deborah
-            </h2>
-            <p class="lead text-muted-2 mt-3">
-              Pastors Clarance &amp; Deborah lead the Destiny C3 family from
-              our home base in Subang Jaya, Malaysia. With a heart for the
-              local church and a vision for the nations, they pastor a
-              growing movement that spans countries, cultures, and
-              generations.
-            </p>
-            <p class="text-muted-2 mt-3">
-              Their passion is simple: to see lives transformed by the love
-              of Jesus, families restored, and a great church planted in
-              every nation.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============== PASTORS BY REGION ============== -->
-    <section
-      class="dc3-our-team-directory dc3-our-team__grid pt-3 pb-5"
-      data-active-region="malaysia"
-    >
-      <!-- Sticky country pill bar -->
-      <div class="dc3-country-pills-wrap">
-        <div class="container">
-          <p class="section-eyebrow text-center mb-3 mt-3">Pick a Country</p>
-          <div
-            class="dc3-country-pills"
-            role="tablist"
-            aria-label="Filter pastors by country"
-            data-our-team-country-list
-          ></div>
-        </div>
-      </div>
-
-      <div class="container">
-        <!-- Selected region detail header -->
-        <div class="dc3-region-summary mt-5" data-our-team-region-summary>
-          <div class="dc3-region-summary__head">
-            <div class="dc3-region-summary__title-block">
-              <p class="section-eyebrow mb-2" data-our-team-region-eyebrow>Pastors in</p>
-              <h2 class="section-title display-4 fw-bold mb-0 dc3-region-summary__title">
-                <img
-                  class="dc3-region-summary__flag"
-                  data-our-team-region-flag
-                  src="assets/bg/img/country/my.svg"
-                  alt=""
-                  aria-hidden="true"
-                  width="40"
-                  height="40"
-                />
-                <span data-our-team-region-title>Malaysia</span>
-              </h2>
-            </div>
-            <span class="dc3-region-summary__count" data-our-team-region-count>
-              0 churches
-            </span>
-          </div>
-        </div>
-
-        <!-- Pastor cards grid -->
         <div
-          class="dc3-our-team-grid mt-4"
-          data-our-team-grid
+          class="dc3-sermons-grid"
+          data-sermons-grid
           aria-live="polite"
+          aria-busy="true"
         ></div>
 
-        <!-- Empty state -->
-        <div class="dc3-church-empty d-none" data-our-team-empty>
-          <i class="bi bi-people"></i>
-          <p class="mb-0">
-            No pastors listed yet for this region. Check back soon!
-          </p>
+        <div
+          class="dc3-sermons-load-more"
+          data-sermons-load-more
+          hidden
+        >
+          <button
+            type="button"
+            class="btn btn-outline-dark btn-lg px-5"
+            data-sermons-load-more-btn
+          >
+            Load more sermons
+          </button>
         </div>
       </div>
     </section>
+
+    <!-- ============== SERMON LIGHTBOX MODAL ============== -->
+    <div
+      class="modal fade dc3-sermon-modal"
+      id="sermonModal"
+      tabindex="-1"
+      aria-labelledby="sermonModalTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content dc3-sermon-modal__content">
+          <button
+            type="button"
+            class="dc3-sermon-modal__close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+            <i class="bi bi-x-lg" aria-hidden="true"></i>
+          </button>
+          <div class="dc3-sermon-modal__player">
+            <iframe
+              data-sermon-iframe
+              src=""
+              title="Sermon video"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="dc3-sermon-modal__meta">
+            <h2
+              id="sermonModalTitle"
+              class="dc3-sermon-modal__title"
+              data-sermon-title
+            ></h2>
+            <p class="dc3-sermon-modal__date" data-sermon-date></p>
+            <a
+              class="dc3-sermon-modal__link"
+              data-sermon-yt-link
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Watch on YouTube <i class="bi bi-arrow-up-right ms-1" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- ============== CTA ============== -->
     <section class="dc3-about-cta py-6">
       <div class="container">
         <div class="dc3-about-cta__card text-center">
-          <p class="section-eyebrow">Get involved</p>
+          <p class="section-eyebrow">Don't miss a Sunday</p>
           <h2 class="section-title display-4 fw-bold">
-            Find your church, find your people.
+            Subscribe to our YouTube channel.
           </h2>
           <p class="lead mx-auto mt-3 text-muted-2" style="max-width: 640px">
-            Visit a Destiny C3 location near you, join a Connect Group, or
-            reach out to one of our pastors directly.
+            Be the first to know when new sermons are uploaded — and join us
+            live every Sunday morning.
           </p>
           <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mt-4">
-            <a href="locations.html" class="btn btn-dc3 btn-lg px-4">
-              Find a Church
+            <a href="https://www.youtube.com/@destinyc3?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="btn btn-dc3 btn-lg px-4">
+              <i class="bi bi-youtube me-2"></i>Subscribe on YouTube
             </a>
-            <a href="contact.html" class="btn btn-outline-dark btn-lg px-4">
-              Get in Touch
+            <a href="locations.html" class="btn btn-outline-dark btn-lg px-4">
+              Find a Church
             </a>
           </div>
         </div>
@@ -317,8 +294,9 @@
           <div class="col-6 col-lg-2">
             <h6 class="footer-heading">Media</h6>
             <ul class="list-unstyled footer-links">
-              <li><a href="https://www.youtube.com/@destinyc3">Watch Live</a></li>
-              <li><a href="https://open.spotify.com/show/4MgphvFGxIaLRP8nHpZ6h2?si=iIZAAWfaR5C_NvtO0m2TMA">Podcast</a></li>
+              <li><a href="sermons.html">Sermons</a></li>
+              <li><a href="https://www.youtube.com/@destinyc3" target="_blank" rel="noopener noreferrer">Watch Live</a></li>
+              <li><a href="https://open.spotify.com/show/4MgphvFGxIaLRP8nHpZ6h2?si=iIZAAWfaR5C_NvtO0m2TMA" target="_blank" rel="noopener noreferrer">Podcast</a></li>
             </ul>
           </div>
           <div class="col-6 col-lg-2">
@@ -333,14 +311,14 @@
         <hr class="footer-divider" />
         <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-muted-2 small">
           <span>&copy; <span id="year"></span> Destiny C3. All rights reserved.</span>
-          <span><a href="privacy.html" class="footer-legal-link">Privacy Notice</a> · Terms</span>
+          <span><a href="privacy.html" class="footer-legal-link">Privacy Notice</a></span>
         </div>
       </div>
     </footer>
 
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="vendor/jarallax/jarallax.min.js"></script>
-    <script src="js/locations-data.js?v=1.0.0"></script>
     <script src="js/main.js?v=1.0.0"></script>
+    <script src="js/sermons.js?v=1.0.0"></script>
   </body>
 </html>
