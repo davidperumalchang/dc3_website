@@ -5,7 +5,7 @@
    - serviceTimes: [] will display a graceful fallback in the UI.
    ========================================================= */
 window.DC3_LOCATIONS = {
-  order: ["malaysia", "india", "philippines", "thailand"],
+  order: ["malaysia", "india", "thailand", "cambodia"],
   regions: {
     malaysia: {
       label: "Malaysia",
@@ -13,12 +13,12 @@ window.DC3_LOCATIONS = {
       tagline: "Where the Destiny C3 family began.",
       churches: [
         {
-          name: "Destiny C3 Subang — Main Church",
+          name: "Destiny C3 Subang Jaya - Main Church",
           languages: ["English"],
-          pastors: ["Clarance Sashi", "Deborah Clarance"],
+          pastors: ["Clarance Shashi", "Deborah Clarance"],
           photo: "assets/bg/img/pastors/clarance_deb.png",
           address:
-            "S02-06, S02-07, S02-08, Impian Meridian, USJ 1, Jalan Subang 1, 47500 Subang Jaya",
+            "S02-06, S02-07 & S02-08, Impian Meridian, USJ 1, Jalan Subang 1, 47500 Subang Jaya",
           city: "Subang Jaya, Selangor",
           serviceTimes: ["Sundays · 10:30 AM"],
           socials: {
@@ -27,64 +27,77 @@ window.DC3_LOCATIONS = {
           }
         },
         {
-          name: "Destiny C3 Chinatown KL",
-          languages: ["English"],
-          pastors: ["Ramesh Kumar"],
+          name: "Destiny C3 Subang Jaya",
+          languages: ["Tamil"],
+          pastors: ["Dale Padman", "Gawri Padman"],
           address:
-            "Level 15, Kompleks Selangor, 51 Jalan Sultan, City Centre, 50000 Kuala Lumpur",
-          city: "Kuala Lumpur",
-          serviceTimes: [],
+            "S02-06, S02-07 & S02-08, Impian Meridian, USJ 1, Jalan Subang 1, 47500 Subang Jaya",
+          city: "Subang Jaya, Selangor",
+          serviceTimes: ["Sundays · 5:00 PM"],
           socials: {
             facebook: "https://www.facebook.com/destinyc3church/",
             instagram: "https://www.instagram.com/destinyc3/"
+          }
+        },
+        {
+          name: "Destiny C3 Subang Jaya",
+          languages: ["Urdu", "Hindi", "Punjabi"],
+          pastors: ["Ayub Saroosh", "Aneeta Ayub"],
+          address:
+            "S02-06, S02-07 & S02-08, Impian Meridian, USJ 1, Jalan Subang 1, 47500 Subang Jaya",
+          city: "Subang Jaya, Selangor",
+          serviceTimes: ["Saturdays · 8:30 PM"],
+          socials: {
+            facebook: "https://www.facebook.com/destinyc3church/",
+            instagram: "https://www.instagram.com/destinyc3.uhp"
           }
         },
         {
           name: "Destiny C3 Shah Alam",
           languages: ["Tamil"],
-          pastors: ["Dale Padman", "Naveen Neethan"],
-          address: "24-1 Jalan Kristal AR7/AR, Seksyen 7, Shah Alam",
+          pastors: ["Dale Padman", "Gawri Padman"],
+          address:
+            "24-1 (First Floor), Jalan Kristal AR7/AR, Seksyen 7, 40000 Shah Alam",
           city: "Shah Alam, Selangor",
-          serviceTimes: [],
+          serviceTimes: ["Sundays · 10:30 AM"],
           socials: {
             facebook: "https://www.facebook.com/destinyc3church/",
             instagram: "https://www.instagram.com/destinyc3/"
           }
         },
         {
-          name: "Destiny C3 Bukit Beruntung",
-          languages: ["Tamil"],
-          pastors: ["Peter Kana"],
+          name: "Destiny C3 Chinatown",
+          languages: ["English"],
+          pastors: ["Ramesh Kumar", "Serene Kumar"],
           address:
-            "No 4, Jalan 1B/2, Sek BB4, Bandar Bukit Beruntung, 48300 Rawang, Selangor",
-          city: "Bukit Beruntung / Rawang, Selangor",
-          serviceTimes: [],
-          socials: {
-            facebook: "https://www.facebook.com/destinyc3church/",
-            instagram: "https://www.instagram.com/destinyc3/"
-          }
-        },
-        {
-          name: "Destiny C3 Kuala Lumpur (Filipino)",
-          languages: ["Tagalog"],
-          pastors: ["Roy Evangelio"],
-          address:
-            "Level 14, Kompleks Selangor, 51 Jalan Sultan, City Centre, 50000 Kuala Lumpur",
+            "Level 15, Kompleks Selangor, 51 Jalan Sultan, Lorong Petaling, 50000 Kuala Lumpur",
           city: "Kuala Lumpur",
-          serviceTimes: [],
+          serviceTimes: ["Sundays · 9:30 AM"],
           socials: {
             facebook: "https://www.facebook.com/destinyc3church/",
             instagram: "https://www.instagram.com/destinyc3/"
           }
         },
         {
-          name: "Destiny C3 Bera",
-          languages: ["Bahasa Malaysia"],
-          pastors: ["Joham"],
+          name: "Destiny C3 Chinatown",
+          languages: ["Tagalog"],
+          pastors: ["Roy Evangelio", "Maria Roy"],
           address:
-            "No 11, Taman Meranti Jaya 1, 28200 Triang, Bera, Pahang",
-          city: "Triang, Bera, Pahang",
-          serviceTimes: [],
+            "Level 15, Kompleks Selangor, 51 Jalan Sultan, Lorong Petaling, 50000 Kuala Lumpur",
+          city: "Kuala Lumpur",
+          serviceTimes: ["Sundays · 11:30 AM"],
+          socials: {
+            facebook: "https://www.facebook.com/destinyc3church/",
+            instagram: "https://www.instagram.com/destinyc3/"
+          }
+        },
+        {
+          name: "Destiny C3 Bera, Pahang (Orang Asli Ministry)",
+          languages: ["Bahasa Malaysia"],
+          pastors: ["Joham Ali", "Augustina Pongsendana"],
+          address: "Sub Lot 39B KM 2, Jalan Triang, Bera, 28300 Pahang",
+          city: "Bera, Pahang",
+          serviceTimes: ["Sundays · 10:00 AM"],
           socials: {
             facebook: "https://www.facebook.com/destinyc3church/",
             instagram: "https://www.instagram.com/destinyc3/"
@@ -99,50 +112,16 @@ window.DC3_LOCATIONS = {
       tagline: "Reaching India with the love of Jesus.",
       churches: [
         {
-          name: "Destiny C3 Visthar",
-          languages: ["English", "Hindi"],
-          pastors: ["Day", "Jayamary"],
+          name: "Destiny C3 India",
+          languages: ["English"],
+          pastors: ["Bharat Kanapathy", "Jayamalar Anthony"],
           address:
-            "A Wing, 1st Floor, Ruah Complex, Doddagubi Main Road, Visthar, 560077",
+            "A Wing, 1st Floor, Ruah Complex, Doddagubi Main Road, Bangalore 560077, Karnataka",
           city: "Bangalore, Karnataka",
           serviceTimes: [],
           socials: {
-            facebook: "https://www.facebook.com/dc3india/",
-            instagram: "https://www.instagram.com/dc3india/"
-          }
-        },
-        {
-          name: "Destiny C3 Hyderabad",
-          languages: ["English", "Telugu"],
-          pastors: ["Joshua Pothuganti"],
-          address:
-            "58 Godhumakunta, Near IMA Campus, Medchal, Hyderabad, 501301",
-          city: "Hyderabad, Telangana",
-          serviceTimes: [],
-          socials: {
-            facebook: "https://www.facebook.com/dc3india/",
-            instagram: "https://www.instagram.com/dc3india/"
-          }
-        }
-      ]
-    },
-
-    philippines: {
-      label: "Philippines",
-      flag: "assets/bg/img/country/ph.svg",
-      tagline: "Family across the islands.",
-      churches: [
-        {
-          name: "Destiny C3 Catarman",
-          languages: ["Tagalog"],
-          pastors: ["Rey Vy"],
-          address:
-            "Purok 3, Jose Abadsantos, Catarman, Northern Samar, Philippines 6400",
-          city: "Catarman, Northern Samar",
-          serviceTimes: [],
-          socials: {
-            facebook: "https://www.facebook.com/destinyc3church/",
-            instagram: "https://www.instagram.com/destinyc3/"
+            facebook: "https://www.facebook.com/destinyc3india",
+            instagram: "https://www.instagram.com/destinyc3india"
           }
         }
       ]
@@ -156,14 +135,39 @@ window.DC3_LOCATIONS = {
         {
           name: "Destiny C3 Chiang Mai",
           languages: ["English"],
-          pastors: ["Vincent Nimbalker"],
+          pastors: ["Vincent Nimbalker", "Helen Avadiar-Nimbalker"],
           address:
-            "80/16 Soi 3A, Loi Kroh Road, Chang Khlan, Chiang Mai 50100",
+            "4/2 Loi Kroh Rd Lane 3, Chang Khlan, Chiang Mai 50100",
           city: "Chiang Mai",
-          serviceTimes: [],
+          serviceTimes: ["Fridays · 10:00 AM"],
           socials: {
             facebook: "https://www.facebook.com/destinyc3church/",
-            instagram: "https://www.instagram.com/destinyc3/"
+            instagram: "https://www.instagram.com/dc3_chiangmai"
+          }
+        }
+      ]
+    },
+
+    cambodia: {
+      label: "Cambodia",
+      flag: "assets/bg/img/country/kh.svg",
+      tagline: "New family across the Mekong.",
+      churches: [
+        {
+          name: "Destiny C3 Bykota",
+          languages: ["Khmer"],
+          pastors: [
+            "Keziah Praise T. Matiga",
+            "Keren Joy O. Matiga",
+            "Levi P. Matiga"
+          ],
+          address:
+            "Borey Thy Thy, Poipet City, Banteay Meanchey, Cambodia",
+          city: "Poipet, Banteay Meanchey",
+          serviceTimes: ["Saturdays · 7:30 PM"],
+          socials: {
+            facebook: "https://web.facebook.com/destinyc3bykotapoipet",
+            instagram: "https://www.instagram.com/c3bykota_poipet"
           }
         }
       ]
