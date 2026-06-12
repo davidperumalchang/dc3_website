@@ -7,7 +7,7 @@ window.DC3_CONNECT_GROUPS = {
   regions: {
     malaysia: {
       label: "Destiny C3 Subang (Malaysia)",
-      flag: "assets/bg/img/country/my.svg",
+      flag: "assets/img/country/my.svg",
       tagline: "Life done together — find a group near you.",
       groups: [
         {

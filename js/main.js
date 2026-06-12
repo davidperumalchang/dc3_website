@@ -19,9 +19,62 @@
     initLocationsExplorer();
     initConnectGroupsExplorer();
     initOurTeamExplorer();
+    initPastorPhotoLightbox();
     initCopyButtons();
     initMinistryModal();
   });
+
+  /* =========================================================
+     PASTOR PHOTO LIGHTBOX (our-team.html)
+     - Opens the photo of a pastor card in a Bootstrap modal
+       when clicked/keyboard-activated. Cards are rendered
+       dynamically so we use event delegation on the page.
+     ========================================================= */
+  function initPastorPhotoLightbox() {
+    var modalEl = document.getElementById("pastorPhotoModal");
+    if (!modalEl) return;
+    if (!window.bootstrap || !window.bootstrap.Modal) return;
+
+    var imgEl = modalEl.querySelector("[data-pastor-modal-img]");
+    var titleEl = modalEl.querySelector("[data-pastor-modal-title]");
+    var subtitleEl = modalEl.querySelector("[data-pastor-modal-subtitle]");
+    if (!imgEl) return;
+
+    var modal = new window.bootstrap.Modal(modalEl);
+
+    function openFor(trigger) {
+      var src = trigger.getAttribute("data-photo-src");
+      if (!src) return;
+      var title = trigger.getAttribute("data-photo-title") || "";
+      var subtitle = trigger.getAttribute("data-photo-subtitle") || "";
+      imgEl.src = src;
+      imgEl.alt = title ? title + (subtitle ? ", " + subtitle : "") : "";
+      if (titleEl) titleEl.textContent = title;
+      if (subtitleEl) subtitleEl.textContent = subtitle;
+      modal.show();
+    }
+
+    document.addEventListener("click", function (e) {
+      var trigger = e.target.closest("[data-pastor-photo-trigger]");
+      if (!trigger) return;
+      e.preventDefault();
+      openFor(trigger);
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "Enter" && e.key !== " ") return;
+      var trigger = e.target.closest("[data-pastor-photo-trigger]");
+      if (!trigger) return;
+      e.preventDefault();
+      openFor(trigger);
+    });
+
+    modalEl.addEventListener("hidden.bs.modal", function () {
+      imgEl.src = "";
+      if (titleEl) titleEl.textContent = "";
+      if (subtitleEl) subtitleEl.textContent = "";
+    });
+  }
 
   /* =========================================================
      MINISTRY DETAIL MODAL (about.html)
@@ -550,13 +603,7 @@
       }
 
       if (church.pastors && church.pastors.length) {
-        body.appendChild(
-          buildRow(
-            "bi-people-fill",
-            church.pastors.length === 1 ? "Pastor" : "Pastors",
-            church.pastors.join(", ")
-          )
-        );
+        body.appendChild(buildPastorsRow(church));
       }
 
       var serviceText = (church.serviceTimes && church.serviceTimes.length)
@@ -660,6 +707,77 @@
       row.appendChild(content);
       return row;
     }
+
+    /* Pastors row: replaces the static people icon with a single clickable
+       photo icon (the church/team photo). Falls back to the default
+       people-icon when no photo is available. */
+    function buildPastorsRow(church) {
+      var row = document.createElement("div");
+      row.className = "dc3-church-card__row";
+
+      row.appendChild(buildPastorIcon(church));
+
+      var content = document.createElement("div");
+      content.className = "dc3-church-card__content";
+
+      var labelEl = document.createElement("span");
+      labelEl.className = "dc3-church-card__label";
+      labelEl.textContent = church.pastors.length === 1 ? "Pastor" : "Pastors";
+      content.appendChild(labelEl);
+
+      var valEl = document.createElement("span");
+      valEl.className = "dc3-church-card__value";
+      valEl.textContent = church.pastors.join(", ");
+      content.appendChild(valEl);
+
+      row.appendChild(content);
+      return row;
+    }
+
+    function buildPastorIcon(church) {
+      var photo = church.photo || "";
+      if (!photo) {
+        var fallback = document.createElement("span");
+        fallback.className = "dc3-church-card__icon";
+        fallback.innerHTML =
+          '<i class="bi bi-people-fill" aria-hidden="true"></i>';
+        return fallback;
+      }
+
+      var title = formatPastorNames(church.pastors);
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "dc3-pastor-icon is-clickable";
+      btn.setAttribute("data-pastor-photo-trigger", "");
+      btn.setAttribute("data-photo-src", photo);
+      btn.setAttribute("data-photo-title", title);
+      btn.setAttribute("data-photo-subtitle", church.name);
+      btn.setAttribute("aria-label", "View photo of " + title);
+      btn.setAttribute("title", "View photo of " + title);
+
+      var img = document.createElement("img");
+      img.src = photo;
+      img.alt = "";
+      img.setAttribute("aria-hidden", "true");
+      img.setAttribute("loading", "lazy");
+      img.setAttribute("decoding", "async");
+      btn.appendChild(img);
+
+      return btn;
+    }
+
+    function formatPastorNames(pastors) {
+      if (!pastors || !pastors.length) return "Pastoral Team";
+      if (pastors.length === 1) return "Pastor " + pastors[0];
+      var firstNames = pastors.map(function (n) {
+        return String(n).split(" ")[0];
+      });
+      if (firstNames.length === 2) {
+        return "Pastors " + firstNames[0] + " & " + firstNames[1];
+      }
+      var last = firstNames[firstNames.length - 1];
+      return "Pastors " + firstNames.slice(0, -1).join(", ") + " & " + last;
+    }
   }
 
   /* =========================================================
@@ -710,6 +828,11 @@
       return raw && allowedRegions.indexOf(raw) !== -1 ? raw : "";
     }
 
+    function regionTeamCount(region) {
+      var churches = (region && region.churches) || [];
+      return mergeChurchesByPastors(churches).length;
+    }
+
     function renderCountryList() {
       listEl.innerHTML = "";
 
@@ -717,7 +840,7 @@
         var region = data.regions[key];
         if (!region) return;
 
-        var count = (region.churches && region.churches.length) || 0;
+        var count = regionTeamCount(region);
         var btn = document.createElement("button");
         btn.type = "button";
         btn.className = "dc3-country-pill";
@@ -726,7 +849,7 @@
         btn.setAttribute("aria-selected", "false");
         btn.setAttribute(
           "aria-label",
-          region.label + " — " + count + " " + (count === 1 ? "church" : "churches")
+          region.label + " — " + count + " " + (count === 1 ? "team" : "teams")
         );
 
         if (region.flag) {
@@ -789,8 +912,8 @@
       if (titleEl) titleEl.textContent = region.label;
       if (eyebrowEl) eyebrowEl.textContent = "Pastors in";
       if (countEl) {
-        var n = (region.churches && region.churches.length) || 0;
-        countEl.textContent = n + " " + (n === 1 ? "church" : "churches");
+        var n = regionTeamCount(region);
+        countEl.textContent = n + " " + (n === 1 ? "team" : "teams");
       }
       if (flagEl) {
         if (region.flag) {
@@ -826,8 +949,58 @@
       cardsEl.classList.remove("d-none");
       if (emptyEl) emptyEl.classList.add("d-none");
 
-      churches.forEach(function (church) {
+      var merged = mergeChurchesByPastors(churches);
+      merged.forEach(function (church) {
         cardsEl.appendChild(buildPastorCard(church));
+      });
+    }
+
+    /* Our Team-only: collapse churches that share the same pastors
+       into a single card (e.g. Pastors Dale & Gawri serve in both
+       Subang Tamil and Shah Alam Tamil). Joined name strips the
+       repeated "Destiny C3" prefix for readability. */
+    function mergeChurchesByPastors(churches) {
+      var byKey = {};
+      var order = [];
+      churches.forEach(function (c) {
+        var key = (c.pastors || [])
+          .map(function (n) { return String(n).trim().toLowerCase(); })
+          .slice()
+          .sort()
+          .join("|");
+        if (!byKey[key]) {
+          byKey[key] = {
+            names: [c.name],
+            pastors: c.pastors,
+            cities: c.city ? [c.city] : [],
+            photo: c.photo
+          };
+          order.push(key);
+        } else {
+          var group = byKey[key];
+          group.names.push(c.name);
+          if (c.city && group.cities.indexOf(c.city) === -1) {
+            group.cities.push(c.city);
+          }
+          if (!group.photo && c.photo) group.photo = c.photo;
+        }
+      });
+
+      return order.map(function (k) {
+        var g = byKey[k];
+        var joinedName = g.names.length === 1
+          ? g.names[0]
+          : g.names
+              .map(function (n, i) {
+                return i === 0 ? n : n.replace(/^Destiny C3\s+/i, "");
+              })
+              .join(" · ");
+        return {
+          name: joinedName,
+          pastors: g.pastors,
+          city: g.cities.join(" · "),
+          photo: g.photo
+        };
       });
     }
 
@@ -844,6 +1017,20 @@
         img.setAttribute("loading", "lazy");
         img.setAttribute("decoding", "async");
         photo.appendChild(img);
+        photo.classList.add("is-clickable");
+        photo.setAttribute("role", "button");
+        photo.setAttribute("tabindex", "0");
+        photo.setAttribute(
+          "aria-label",
+          "View larger photo of " + formatPastorNames(church.pastors)
+        );
+        photo.setAttribute("data-pastor-photo-trigger", "");
+        photo.setAttribute("data-photo-src", church.photo);
+        photo.setAttribute(
+          "data-photo-title",
+          formatPastorNames(church.pastors)
+        );
+        photo.setAttribute("data-photo-subtitle", church.name);
       } else {
         photo.classList.add("dc3-our-team-card__photo--placeholder");
         photo.innerHTML = '<i class="bi bi-person-fill" aria-hidden="true"></i>';

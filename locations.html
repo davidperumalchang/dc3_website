@@ -186,7 +186,7 @@
                 <img
                   class="dc3-region-summary__flag"
                   data-region-flag
-                  src="assets/bg/img/country/my.svg"
+                  src="assets/img/country/my.svg"
                   alt=""
                   aria-hidden="true"
                   width="40"
@@ -217,6 +217,44 @@
         </div>
       </div>
     </section>
+
+    <!-- ============== PASTOR PHOTO LIGHTBOX ============== -->
+    <div
+      class="modal fade dc3-pastor-modal"
+      id="pastorPhotoModal"
+      tabindex="-1"
+      aria-labelledby="pastorPhotoModalTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content dc3-pastor-modal__content">
+          <button
+            type="button"
+            class="dc3-pastor-modal__close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+            <i class="bi bi-x-lg" aria-hidden="true"></i>
+          </button>
+          <div class="dc3-pastor-modal__figure">
+            <img
+              data-pastor-modal-img
+              src=""
+              alt=""
+              class="dc3-pastor-modal__img"
+            />
+          </div>
+          <div class="dc3-pastor-modal__meta">
+            <h2
+              id="pastorPhotoModalTitle"
+              class="dc3-pastor-modal__title"
+              data-pastor-modal-title
+            ></h2>
+            <p class="dc3-pastor-modal__subtitle" data-pastor-modal-subtitle></p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- ============== FOOTER ============== -->
     <footer class="dc3-footer pt-6 pb-4">

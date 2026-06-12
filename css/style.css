@@ -1336,7 +1336,8 @@ h4, h5, h6 {
 
 .dc3-our-team-feature {
   position: relative;
-  margin: 0;
+  margin: 0 auto;
+  max-width: 600px;
   border-radius: 22px;
   overflow: hidden;
   background: var(--dc3-bg);
@@ -1348,6 +1349,7 @@ h4, h5, h6 {
   display: block;
   width: 100%;
   height: auto;
+  max-width: 600px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
 }
@@ -1457,6 +1459,101 @@ h4, h5, h6 {
   .dc3-our-team-card__photo--placeholder {
     font-size: 2.4rem;
   }
+}
+
+/* Clickable pastor photo — opens lightbox */
+.dc3-our-team-card__photo.is-clickable {
+  cursor: zoom-in;
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.dc3-our-team-card__photo.is-clickable img {
+  transition: transform 0.4s ease;
+}
+.dc3-our-team-card__photo.is-clickable:hover img,
+.dc3-our-team-card__photo.is-clickable:focus-visible img {
+  transform: scale(1.06);
+}
+.dc3-our-team-card__photo.is-clickable:focus-visible {
+  outline: 2px solid var(--dc3-accent);
+  outline-offset: 3px;
+}
+
+/* --- Pastor photo lightbox --- */
+.dc3-pastor-modal .modal-dialog {
+  margin: 1rem auto;
+}
+.dc3-pastor-modal__content {
+  position: relative;
+  background: var(--dc3-bg);
+  border: 1px solid var(--dc3-border);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 40px 90px -30px rgba(0, 0, 0, 0.45);
+}
+.dc3-pastor-modal__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 1.05rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.dc3-pastor-modal__close:hover,
+.dc3-pastor-modal__close:focus-visible {
+  background: rgba(0, 0, 0, 0.85);
+  transform: scale(1.05);
+  outline: none;
+}
+.dc3-pastor-modal__figure {
+  margin: 0;
+  padding: 3.25rem 0 0;
+  background: var(--dc3-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 575.98px) {
+  .dc3-pastor-modal__figure {
+    padding-top: 4.5rem;
+  }
+}
+.dc3-pastor-modal__img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: 14px;
+  box-shadow: 0 18px 40px -20px rgba(0, 0, 0, 0.35);
+}
+.dc3-pastor-modal__meta {
+  padding: 1.25rem 1.5rem 1.5rem;
+  text-align: center;
+}
+.dc3-pastor-modal__title {
+  margin: 0 0 0.25rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--dc3-text);
+}
+.dc3-pastor-modal__subtitle {
+  margin: 0;
+  color: var(--dc3-muted);
+  font-size: 0.9rem;
 }
 
 /* --- About final CTA --- */
@@ -1773,6 +1870,46 @@ h4, h5, h6 {
   font-size: 0.85rem;
   color: var(--dc3-muted);
   line-height: 1.4;
+}
+
+/* Pastors row — single clickable photo icon (replaces the static people icon).
+   Same footprint as .dc3-church-card__icon so the row layout is unchanged. */
+.dc3-pastor-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid var(--dc3-border);
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--dc3-bg-2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dc3-pastor-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dc3-pastor-icon.is-clickable {
+  cursor: zoom-in;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dc3-pastor-icon.is-clickable:hover,
+.dc3-pastor-icon.is-clickable:focus-visible {
+  transform: scale(1.12);
+  box-shadow: 0 6px 14px -6px rgba(0, 0, 0, 0.35);
+  outline: none;
+}
+
+.dc3-pastor-icon.is-clickable:focus-visible {
+  outline: 2px solid var(--dc3-accent);
+  outline-offset: 2px;
 }
 
 .dc3-church-card__foot {
