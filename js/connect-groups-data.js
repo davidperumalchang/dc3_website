@@ -13,38 +13,38 @@ window.DC3_CONNECT_GROUPS = {
         {
           location: "USJ Heights, Subang Jaya",
           leaders: ["David Teh", "Sarah Teh"],
-          meetFrequency: "Alternate Friday night",
+          meetFrequency: "Alternate Friday nights",
           dynamics: "Seniors aged 50 and above"
         },
         {
           location: "Goodyear Court, Subang Jaya",
           leaders: ["Ps Ramesh Kumar", "Mary Stephen"],
-          meetFrequency: "Alternate Friday night",
+          meetFrequency: "Alternate Friday nights",
           dynamics: "Families (ages 25–70)"
         },
         {
           location: "Kota Kemuning, Shah Alam",
           leaders: ["Lim Pei Yin"],
-          meetFrequency: "Alternate Friday night",
+          meetFrequency: "Alternate Friday nights",
           dynamics: "Families with young kids"
         },
         {
           location: "Taman Klang Jaya, Klang",
           leaders: ["Siri", "Sharon"],
-          meetFrequency: "Alternate Friday night",
+          meetFrequency: "Alternate Friday nights",
           dynamics: "Families with kids"
         },
         {
           location: "Seksyen 4, Petaling Jaya",
           leaders: ["Krishnan", "Malika"],
-          meetFrequency: "Alternate Friday night",
+          meetFrequency: "Alternate Friday nights",
           dynamics: "Seniors aged 40 and above"
         },
         {
           location: "USJ 17, Subang Jaya",
           leaders: ["John", "Lydia"],
           meetFrequency:
-            "Alternate Friday night (once a month physically & once a month online)",
+            "Alternate Friday nights (once a month physically & once a month online)",
           dynamics: "Seniors aged 50 and above"
         },
         {
@@ -57,13 +57,13 @@ window.DC3_CONNECT_GROUPS = {
           location: "Damansara Perdana",
           leaders: ["Murali", "Devina"],
           meetFrequency:
-            "Alternate Monday night (online with a physical meet every 2 months)",
+            "Alternate Monday nights (online with a physical meet every 2 months)",
           dynamics: "Mixed group of ages 25 to 50"
         },
         {
           location: "Bandar Kinrara, Puchong",
           leaders: ["Shelton", "Mellisa"],
-          meetFrequency: "Alternate Friday night",
+          meetFrequency: "Alternate Friday nights",
           dynamics: "Young working adults"
         },
         {
@@ -76,7 +76,7 @@ window.DC3_CONNECT_GROUPS = {
         {
           location: "SPK Damansara",
           leaders: ["Judy"],
-          meetFrequency: "Alternate Friday night",
+          meetFrequency: "Alternate Friday nights",
           dynamics: "Seniors aged 50 and above"
         }
       ]
