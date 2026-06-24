@@ -16,9 +16,9 @@
     </script> -->
     <meta
       name="description"
-      content="Find a Destiny C3 church near you across Malaysia, India, Thailand and Cambodia."
+      content="What's happening at Destiny C3 — upcoming events, gatherings and special services across our church family."
     />
-    <title>Our Locations · Destiny C3</title>
+    <title>Events · Destiny C3</title>
 
     <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico" />
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png" />
@@ -29,15 +29,11 @@
     <link rel="manifest" href="assets/favicon/site.webmanifest" />
 
     <link href="vendor/fonts/dc3-fonts.css" rel="stylesheet" />
-
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-
     <link href="vendor/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
-
     <link rel="stylesheet" href="css/style.css?v=1.3.1" />
   </head>
   <body class="dc3-page">
-    <!-- ============== NAVBAR ============== -->
     <nav
       id="mainNav"
       class="navbar navbar-expand-lg navbar-dark fixed-top dc3-navbar"
@@ -81,10 +77,10 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="locations.html">Our Locations</a>
+              <a class="nav-link" href="locations.html">Our Locations</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="events.html">Events</a>
+              <a class="nav-link active" aria-current="page" href="events.html">Events</a>
             </li>
             <li class="nav-item dropdown dropdown-hover">
               <a
@@ -140,126 +136,129 @@
       </div>
     </nav>
 
-    <!-- ============== PAGE HERO ============== -->
-    <header class="dc3-page-hero jarallax" data-jarallax data-speed="0.3">
+    <header class="dc3-page-hero">
       <div class="dc3-section__overlay"></div>
       <div class="container position-relative">
         <div class="row justify-content-center">
           <div class="col-lg-9 text-center">
-            <p class="section-eyebrow">Find a Church Near You</p>
+            <p class="section-eyebrow">What's Happening</p>
             <h1 class="section-title display-2 fw-bold">
-              Our <span class="text-accent">locations</span> across Asia.
+              Upcoming <span class="text-accent">events.</span>
             </h1>
             <p class="lead mt-4 fw-light text-muted-2 mx-auto" style="max-width: 720px">
-              From Kuala Lumpur to Bangalore — Destiny C3 is one family with
-              campuses across Malaysia, India, Thailand and Cambodia. Choose a
-              country to see the churches near you.
+              From special services to gatherings and celebrations — here's
+              what's coming up across the Destiny C3 family. Add any event
+              straight to your own calendar.
             </p>
           </div>
         </div>
       </div>
     </header>
 
-    <!-- ============== LOCATIONS EXPLORER ============== -->
-    <section
-      id="locations"
-      class="dc3-locations-page dc3-locations__grid pt-3 pb-5"
-      data-active-region="malaysia"
-    >
-      <!-- Sticky country pill bar -->
-      <div class="dc3-country-pills-wrap">
-        <div class="container">
-          <p class="section-eyebrow text-center mb-3 mt-3">Pick a Country</p>
-          <div
-            class="dc3-country-pills"
-            role="tablist"
-            aria-label="Filter churches by country"
-            data-country-list
-          ></div>
-        </div>
-      </div>
-
+    <section class="dc3-events-page py-6" data-events>
       <div class="container">
-        <!-- Selected country detail header -->
-        <div class="dc3-region-summary mt-5" data-region-summary>
-          <div class="dc3-region-summary__head">
-            <div class="dc3-region-summary__title-block">
-              <p class="section-eyebrow mb-2" data-region-eyebrow>Churches in</p>
-              <h2 class="section-title display-4 fw-bold mb-0 dc3-region-summary__title">
-                <img
-                  class="dc3-region-summary__flag"
-                  data-region-flag
-                  src="assets/img/country/my.svg"
-                  alt=""
-                  aria-hidden="true"
-                  width="40"
-                  height="40"
-                />
-                <span data-region-title>Malaysia</span>
-              </h2>
+        <div class="row g-4 g-lg-5">
+          <div class="col-lg-8">
+            <!-- Loading state -->
+            <div class="dc3-events-loading" data-events-loading>
+              <div class="spinner-border" role="status" aria-hidden="true"></div>
+              <p class="mb-0 mt-3">Loading upcoming events…</p>
             </div>
-            <span class="dc3-region-summary__count" data-region-count>
-              0 churches
-            </span>
+
+            <!-- Events agenda -->
+            <div
+              class="dc3-events-agenda d-none"
+              data-events-grid
+              aria-live="polite"
+            ></div>
+
+            <!-- Empty state -->
+            <div class="dc3-church-empty d-none" data-events-empty>
+              <i class="bi bi-calendar-x"></i>
+              <p class="mb-0">
+                No upcoming events listed right now. Check back soon — or follow
+                us on social media for the latest.
+              </p>
+            </div>
+
+            <!-- Error state -->
+            <div class="dc3-church-empty d-none" data-events-error>
+              <i class="bi bi-exclamation-circle"></i>
+              <p class="mb-0" data-events-error-text>
+                We couldn't load events right now. Please try again later.
+              </p>
+            </div>
           </div>
-        </div>
 
-        <!-- Church cards grid -->
-        <div
-          class="dc3-church-grid mt-4"
-          data-church-grid
-          aria-live="polite"
-        ></div>
+          <div class="col-lg-4 order-first order-lg-last">
+            <aside class="dc3-events-cal" data-events-calendar>
+              <button
+                type="button"
+                class="dc3-events-cal__toggle"
+                data-cal-toggle
+                aria-expanded="false"
+                aria-controls="dc3CalBody"
+              >
+                <span class="dc3-events-cal__toggle-label">
+                  <i class="bi bi-calendar3" aria-hidden="true"></i> Jump to a date
+                </span>
+                <i
+                  class="bi bi-chevron-down dc3-events-cal__toggle-icon"
+                  aria-hidden="true"
+                ></i>
+              </button>
 
-        <!-- Empty state (hidden by default) -->
-        <div class="dc3-church-empty d-none" data-church-empty>
-          <i class="bi bi-geo-alt"></i>
-          <p class="mb-0">
-            No churches listed yet for this region. Check back soon!
-          </p>
+              <div class="dc3-events-cal__body" id="dc3CalBody">
+                <div class="dc3-events-cal__head">
+                  <button
+                    type="button"
+                    class="dc3-events-cal__nav"
+                    data-cal-prev
+                    aria-label="Previous month"
+                  >
+                    <i class="bi bi-chevron-left" aria-hidden="true"></i>
+                  </button>
+                  <span class="dc3-events-cal__title" data-cal-title>Calendar</span>
+                  <button
+                    type="button"
+                    class="dc3-events-cal__nav"
+                    data-cal-next
+                    aria-label="Next month"
+                  >
+                    <i class="bi bi-chevron-right" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <div class="dc3-events-cal__grid" data-cal-grid></div>
+              </div>
+            </aside>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ============== PASTOR PHOTO LIGHTBOX ============== -->
-    <div
-      class="modal fade dc3-pastor-modal"
-      id="pastorPhotoModal"
-      tabindex="-1"
-      aria-labelledby="pastorPhotoModalTitle"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content dc3-pastor-modal__content">
-          <button
-            type="button"
-            class="dc3-pastor-modal__close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          >
-            <i class="bi bi-x-lg" aria-hidden="true"></i>
-          </button>
-          <div class="dc3-pastor-modal__figure">
-            <img
-              data-pastor-modal-img
-              src=""
-              alt=""
-              class="dc3-pastor-modal__img"
-            />
-          </div>
-          <div class="dc3-pastor-modal__meta">
-            <h2
-              id="pastorPhotoModalTitle"
-              class="dc3-pastor-modal__title"
-              data-pastor-modal-title
-            ></h2>
-            <p class="dc3-pastor-modal__subtitle" data-pastor-modal-subtitle></p>
+    <section class="dc3-about-cta py-6">
+      <div class="container">
+        <div class="dc3-about-cta__card text-center">
+          <p class="section-eyebrow">Don't miss a thing</p>
+          <h2 class="section-title display-4 fw-bold">
+            Stay in the loop.
+          </h2>
+          <p class="lead mx-auto mt-3 text-muted-2" style="max-width: 640px">
+            Follow us on social media or get in touch to hear about what's
+            coming up at Destiny C3.
+          </p>
+          <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mt-4">
+            <a href="contact.html" class="btn btn-dc3 btn-lg px-4">
+              Get in Touch
+            </a>
+            <a href="https://www.instagram.com/destinyc3/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark btn-lg px-4">
+              Follow on Instagram
+            </a>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- ============== FOOTER ============== -->
     <footer class="dc3-footer pt-6 pb-4">
       <div class="container">
         <div class="row gy-4">
@@ -275,53 +274,19 @@
               people, and reaching God's world.
             </p>
             <div class="footer-socials mt-3">
-              <a
-                href="https://www.youtube.com/@destinyc3"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="YouTube"
-              ><i class="bi bi-youtube"></i></a>
-              <a
-                href="https://www.instagram.com/destinyc3/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-              ><i class="bi bi-instagram"></i></a>
-              <a
-                href="https://www.facebook.com/destinyc3church/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-              ><i class="bi bi-facebook"></i></a>
-              <a
-                href="https://open.spotify.com/show/4MgphvFGxIaLRP8nHpZ6h2?si=iIZAAWfaR5C_NvtO0m2TMA"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Spotify"
-              ><i class="bi bi-spotify"></i></a>
+              <a href="https://www.youtube.com/@destinyc3" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+              <a href="https://www.instagram.com/destinyc3/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="https://www.facebook.com/destinyc3church/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="https://open.spotify.com/show/4MgphvFGxIaLRP8nHpZ6h2?si=iIZAAWfaR5C_NvtO0m2TMA" target="_blank" rel="noopener noreferrer" aria-label="Spotify"><i class="bi bi-spotify"></i></a>
             </div>
-
             <div class="footer-affiliates mt-4">
               <p class="footer-affiliates__label">Part of the C3 Family</p>
               <div class="footer-affiliates__links">
-                <a
-                  href="http://www.c3churchglobal.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  C3 Global <i class="bi bi-arrow-up-right ms-1"></i>
-                </a>
-                <a
-                  href="http://www.c3college.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  C3 College <i class="bi bi-arrow-up-right ms-1"></i>
-                </a>
+                <a href="http://www.c3churchglobal.com/" target="_blank" rel="noopener noreferrer">C3 Global <i class="bi bi-arrow-up-right ms-1"></i></a>
+                <a href="http://www.c3college.com/" target="_blank" rel="noopener noreferrer">C3 College <i class="bi bi-arrow-up-right ms-1"></i></a>
               </div>
             </div>
           </div>
-
           <div class="col-6 col-lg-2">
             <h6 class="footer-heading">About</h6>
             <ul class="list-unstyled footer-links">
@@ -330,7 +295,6 @@
               <li><a href="our-team.html">Our Team</a></li>
             </ul>
           </div>
-
           <div class="col-6 col-lg-2">
             <h6 class="footer-heading">Connect</h6>
             <ul class="list-unstyled footer-links">
@@ -339,7 +303,6 @@
               <li><a href="connect-groups.html">Connect Groups</a></li>
             </ul>
           </div>
-
           <div class="col-6 col-lg-2">
             <h6 class="footer-heading">Media</h6>
             <ul class="list-unstyled footer-links">
@@ -347,7 +310,6 @@
               <li><a href="https://open.spotify.com/show/4MgphvFGxIaLRP8nHpZ6h2?si=iIZAAWfaR5C_NvtO0m2TMA">Podcast</a></li>
             </ul>
           </div>
-
           <div class="col-6 col-lg-2">
             <h6 class="footer-heading">Give</h6>
             <ul class="list-unstyled footer-links">
@@ -355,9 +317,7 @@
             </ul>
           </div>
         </div>
-
         <hr class="footer-divider" />
-
         <div class="footer-bottom-row d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 text-muted-2 small">
           <span class="footer-bottom-row__copyright">&copy; <span id="year"></span> Destiny C3. All rights reserved.</span>
           <span class="footer-bottom-row__privacy"><a href="privacy.html" class="footer-legal-link">Privacy Notice</a></span>
@@ -370,11 +330,8 @@
     </footer>
 
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
     <script src="vendor/jarallax/jarallax.min.js"></script>
-    <script src="vendor/jarallax/jarallax-video.min.js"></script>
-
-    <script src="js/locations-data.js?v=1.3.1"></script>
+    <script src="js/events.js?v=1.3.1"></script>
     <script src="js/main.js?v=1.3.1"></script>
   </body>
 </html>
