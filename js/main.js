@@ -22,7 +22,47 @@
     initPastorPhotoLightbox();
     initCopyButtons();
     initMinistryModal();
+    initBackToTop();
   });
+
+  /* =========================================================
+     BACK TO TOP
+     - Injects a floating button (bottom-right) on every page.
+     - Reveals after the user scrolls down; smooth-scrolls to top.
+     ========================================================= */
+  function initBackToTop() {
+    if (document.querySelector(".dc3-back-to-top")) return;
+
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "dc3-back-to-top";
+    btn.setAttribute("aria-label", "Back to top");
+    btn.setAttribute("title", "Back to top");
+    btn.innerHTML = '<i class="bi bi-arrow-up" aria-hidden="true"></i>';
+    document.body.appendChild(btn);
+
+    var onScroll = function () {
+      if (window.scrollY > 400) {
+        btn.classList.add("is-visible");
+      } else {
+        btn.classList.remove("is-visible");
+      }
+    };
+
+    btn.addEventListener("click", function () {
+      var prefersReduced = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+      try {
+        window.scrollTo({ top: 0, behavior: prefersReduced ? "auto" : "smooth" });
+      } catch (err) {
+        window.scrollTo(0, 0);
+      }
+    });
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
 
   /* =========================================================
      PASTOR PHOTO LIGHTBOX (our-team.html)
@@ -390,6 +430,7 @@
     var eyebrowEl = grid.querySelector("[data-region-eyebrow]");
     var countEl = grid.querySelector("[data-region-count]");
     var flagEl = grid.querySelector("[data-region-flag]");
+    var noteEl = grid.querySelector("[data-region-note]");
 
     if (!listEl || !cardsEl) return;
 
@@ -506,6 +547,15 @@
           flagEl.classList.remove("d-none");
         } else {
           flagEl.classList.add("d-none");
+        }
+      }
+      if (noteEl) {
+        if (region.note) {
+          noteEl.textContent = region.note;
+          noteEl.hidden = false;
+        } else {
+          noteEl.textContent = "";
+          noteEl.hidden = true;
         }
       }
 

@@ -1819,6 +1819,18 @@ h1.hero-title .hero-title__line {
   white-space: nowrap;
 }
 
+.dc3-region-summary__note {
+  margin: 1rem 0 0;
+  max-width: 60ch;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--dc3-text-muted, #6b7280);
+}
+
+.dc3-region-summary__note[hidden] {
+  display: none;
+}
+
 /* ---------- Church cards grid ---------- */
 .dc3-church-grid {
   display: grid;
@@ -3721,5 +3733,78 @@ body > .modal-backdrop.show {
 @media (max-width: 575.98px) {
   .dc3-sermon-modal__meta {
     padding: 1.25rem 1.25rem 1.5rem;
+  }
+}
+
+/* =========================================================
+   BACK TO TOP BUTTON
+   ========================================================= */
+.dc3-back-to-top {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 1040;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  border: 1px solid var(--dc3-border-strong);
+  border-radius: 50%;
+  background-color: var(--dc3-accent);
+  color: #ffffff;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.25s ease, transform 0.25s ease,
+    visibility 0.25s ease, background-color 0.2s ease;
+}
+
+.dc3-back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dc3-back-to-top:hover,
+.dc3-back-to-top:focus-visible {
+  background-color: var(--dc3-accent-2);
+  outline: none;
+}
+
+.dc3-back-to-top:focus-visible {
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.25);
+}
+
+.dc3-back-to-top .bi {
+  transition: transform 0.2s ease;
+}
+
+.dc3-back-to-top:hover .bi {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 575.98px) {
+  .dc3-back-to-top {
+    right: 1rem;
+    bottom: 1rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    font-size: 1.1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dc3-back-to-top {
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+    transform: none;
+  }
+  .dc3-back-to-top.is-visible {
+    transform: none;
   }
 }
