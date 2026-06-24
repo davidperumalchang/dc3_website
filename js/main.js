@@ -22,8 +22,94 @@
     initPastorPhotoLightbox();
     initCopyButtons();
     initMinistryModal();
+    initContactForm();
     initBackToTop();
   });
+
+  /* =========================================================
+     CONTACT FORM (contact.html)
+     - Submits #contactForm to Formspree via fetch (no page reload)
+     - Runs native HTML5 validation first
+     - Shows a custom Bootstrap success modal on success
+     - Reveals an inline error alert on failure
+     ========================================================= */
+  function initContactForm() {
+    var form = document.getElementById("contactForm");
+    if (!form) return;
+
+    var submitBtn = form.querySelector('button[type="submit"]');
+    var errorEl = document.getElementById("contactFormError");
+    var modalEl = document.getElementById("contactSuccessModal");
+    var bsAvailable = window.bootstrap && window.bootstrap.Modal;
+    var modal = bsAvailable && modalEl
+      ? new window.bootstrap.Modal(modalEl)
+      : null;
+
+    function hideError() {
+      if (errorEl) errorEl.classList.add("d-none");
+    }
+
+    function showError() {
+      if (errorEl) errorEl.classList.remove("d-none");
+    }
+
+    function setLoading(isLoading) {
+      if (!submitBtn) return;
+      if (isLoading) {
+        submitBtn.dataset.originalHtml = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.setAttribute("aria-busy", "true");
+        submitBtn.innerHTML =
+          'Sending\u2026 <i class="bi bi-arrow-repeat ms-1 dc3-spin" aria-hidden="true"></i>';
+      } else {
+        submitBtn.disabled = false;
+        submitBtn.removeAttribute("aria-busy");
+        if (submitBtn.dataset.originalHtml) {
+          submitBtn.innerHTML = submitBtn.dataset.originalHtml;
+          delete submitBtn.dataset.originalHtml;
+        }
+      }
+    }
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      hideError();
+
+      if (!form.checkValidity()) {
+        form.classList.add("was-validated");
+        return;
+      }
+
+      if (typeof window.fetch !== "function") {
+        form.submit();
+        return;
+      }
+
+      setLoading(true);
+
+      fetch(form.action, {
+        method: (form.method || "POST").toUpperCase(),
+        body: new FormData(form),
+        headers: { Accept: "application/json" }
+      })
+        .then(function (response) {
+          if (!response.ok) throw new Error("Request failed");
+          form.reset();
+          form.classList.remove("was-validated");
+          if (modal) {
+            modal.show();
+          } else {
+            showError();
+          }
+        })
+        .catch(function () {
+          showError();
+        })
+        .then(function () {
+          setLoading(false);
+        });
+    });
+  }
 
   /* =========================================================
      BACK TO TOP

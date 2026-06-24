@@ -249,9 +249,11 @@
           </div>
           <div class="col-lg-7">
             <form
+              id="contactForm"
               class="dc3-form p-4 p-md-5"
+              action="https://formspree.io/f/mgojozgr"
+              method="POST"
               novalidate
-              onsubmit="event.preventDefault(); this.reset(); document.getElementById('formStatus').classList.remove('d-none');"
             >
               <div class="row g-3">
                 <div class="col-md-6">
@@ -260,6 +262,8 @@
                     type="text"
                     class="form-control"
                     id="firstName"
+                    name="firstName"
+                    autocomplete="given-name"
                     maxlength="50"
                     required
                   />
@@ -270,6 +274,8 @@
                     type="text"
                     class="form-control"
                     id="lastName"
+                    name="lastName"
+                    autocomplete="family-name"
                     maxlength="50"
                     required
                   />
@@ -280,6 +286,8 @@
                     type="email"
                     class="form-control"
                     id="email"
+                    name="email"
+                    autocomplete="email"
                     maxlength="120"
                     required
                   />
@@ -290,6 +298,8 @@
                     type="tel"
                     class="form-control"
                     id="phone"
+                    name="phone"
+                    autocomplete="tel"
                     inputmode="tel"
                     pattern="[0-9+\-\s()]{6,20}"
                     maxlength="20"
@@ -300,10 +310,27 @@
                   <textarea
                     class="form-control"
                     id="message"
+                    name="message"
                     rows="4"
                     maxlength="1000"
                   ></textarea>
                 </div>
+
+                <!-- Formspree spam honeypot (hidden from users) -->
+                <input
+                  type="text"
+                  name="_gotcha"
+                  tabindex="-1"
+                  autocomplete="off"
+                  class="d-none"
+                  aria-hidden="true"
+                />
+                <input
+                  type="hidden"
+                  name="_subject"
+                  value="New message from the Destiny C3 website"
+                />
+
                 <div class="col-12 d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-2">
                   <small class="text-muted-2">
                     By submitting, you agree to our
@@ -314,11 +341,13 @@
                   </button>
                 </div>
                 <div
-                  id="formStatus"
-                  class="alert alert-success mt-2 d-none"
+                  id="contactFormError"
+                  class="alert alert-danger mt-2 d-none"
                   role="alert"
                 >
-                  Thanks! We'll be in touch shortly.
+                  Sorry, something went wrong and your message couldn't be sent.
+                  Please try again, or email
+                  <a href="mailto:info@destinyc3.com">info@destinyc3.com</a>.
                 </div>
               </div>
             </form>
@@ -350,6 +379,44 @@
         </div>
       </div>
     </section>
+
+    <!-- ============== CONTACT SUCCESS MODAL ============== -->
+    <div
+      class="modal fade dc3-success-modal"
+      id="contactSuccessModal"
+      tabindex="-1"
+      aria-labelledby="contactSuccessTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content dc3-success-modal__content">
+          <button
+            type="button"
+            class="btn-close dc3-success-modal__close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+          <div class="dc3-success-modal__icon" aria-hidden="true">
+            <i class="bi bi-check-lg"></i>
+          </div>
+          <p class="dc3-success-modal__eyebrow">Message sent</p>
+          <h2 id="contactSuccessTitle" class="dc3-success-modal__title">
+            Thank you for reaching out!
+          </h2>
+          <p class="dc3-success-modal__text">
+            We've received your message and a member of our team will be in
+            touch with you soon.
+          </p>
+          <button
+            type="button"
+            class="btn btn-dc3 btn-lg px-5 mt-2"
+            data-bs-dismiss="modal"
+          >
+            Done
+          </button>
+        </div>
+      </div>
+    </div>
 
     <!-- ============== FOOTER ============== -->
     <footer class="dc3-footer pt-6 pb-4">

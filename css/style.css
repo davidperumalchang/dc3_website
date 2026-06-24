@@ -3267,6 +3267,124 @@ body > .modal-backdrop.show {
 }
 
 /* =========================================================
+   CONTACT SUCCESS MODAL (contact.html)
+   ========================================================= */
+.dc3-success-modal .modal-dialog {
+  max-width: 480px;
+}
+
+.dc3-success-modal__content {
+  position: relative;
+  border: 1px solid var(--dc3-border);
+  border-radius: 22px;
+  background: var(--dc3-bg);
+  padding: 3rem 1.75rem 2.25rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+@media (min-width: 576px) {
+  .dc3-success-modal__content {
+    padding: 3.25rem 2.75rem 2.5rem;
+  }
+}
+
+.dc3-success-modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 3;
+  padding: 0.65rem;
+  border-radius: 999px;
+  opacity: 0.6;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+}
+
+.dc3-success-modal__close:hover,
+.dc3-success-modal__close:focus-visible {
+  opacity: 1;
+  background: var(--dc3-bg-2);
+}
+
+.dc3-success-modal__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background: #e8f6ec;
+  color: #1d8a4a;
+  font-size: 2.4rem;
+  margin-bottom: 1.4rem;
+  animation: dc3-success-pop 0.35s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dc3-success-modal__icon {
+    animation: none;
+  }
+}
+
+@keyframes dc3-success-pop {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.dc3-success-modal__eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--dc3-muted);
+  margin: 0 0 0.6rem;
+}
+
+.dc3-success-modal__title {
+  font-family: var(--dc3-font-display);
+  font-size: clamp(1.4rem, 3.5vw, 1.85rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--dc3-text);
+  margin: 0 0 0.85rem;
+  line-height: 1.15;
+}
+
+.dc3-success-modal__text {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--dc3-muted);
+  margin: 0 0 1.75rem;
+}
+
+/* Submit button loading spinner (shared) */
+.dc3-spin {
+  display: inline-block;
+  animation: dc3-spin 0.8s linear infinite;
+}
+
+@keyframes dc3-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dc3-spin {
+    animation: none;
+  }
+}
+
+/* =========================================================
    CONTACT PAGE — direct contact info cards
    ========================================================= */
 .dc3-contact-info {
