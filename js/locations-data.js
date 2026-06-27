@@ -117,6 +117,7 @@ window.DC3_LOCATIONS = {
       flag: "assets/img/country/in.svg",
       tagline: "Reaching India with the love of Jesus.",
       note: "Destiny C3 India has multiple locations. The main contact is Pastor Bharat Kanapathy & Jayamalar Anthony.",
+      displayCount: 7,
       churches: [
         {
           name: "Destiny C3 India",

@@ -551,6 +551,15 @@
       return raw && allowedRegions.indexOf(raw) !== -1 ? raw : "";
     }
 
+    // Returns the count shown in pills/summary. A region may override the
+    // actual number of church cards via `displayCount` (client request).
+    function locationsRegionChurchCount(region) {
+      if (region && typeof region.displayCount === "number") {
+        return region.displayCount;
+      }
+      return (region && region.churches && region.churches.length) || 0;
+    }
+
     function renderCountryList() {
       listEl.innerHTML = "";
 
@@ -558,7 +567,7 @@
         var region = data.regions[key];
         if (!region) return;
 
-        var count = (region.churches && region.churches.length) || 0;
+        var count = locationsRegionChurchCount(region);
         var btn = document.createElement("button");
         btn.type = "button";
         btn.className = "dc3-country-pill";
@@ -630,7 +639,7 @@
       if (titleEl) titleEl.textContent = region.label;
       if (eyebrowEl) eyebrowEl.textContent = "Churches in";
       if (countEl) {
-        var n = (region.churches && region.churches.length) || 0;
+        var n = locationsRegionChurchCount(region);
         countEl.textContent = n + " " + (n === 1 ? "church" : "churches");
       }
       if (flagEl) {
