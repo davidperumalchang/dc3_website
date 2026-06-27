@@ -75,7 +75,13 @@
       e.preventDefault();
       hideError();
 
-      if (!form.checkValidity()) {
+      var isValid = true;
+      try {
+        isValid = form.checkValidity();
+      } catch (err) {
+        isValid = true; /* don't block submit on a bad pattern attribute */
+      }
+      if (!isValid) {
         form.classList.add("was-validated");
         return;
       }
