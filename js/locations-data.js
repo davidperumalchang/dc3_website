@@ -116,13 +116,13 @@ window.DC3_LOCATIONS = {
       label: "India",
       flag: "assets/img/country/in.svg",
       tagline: "Reaching India with the love of Jesus.",
-      note: "Destiny C3 India has multiple locations. The main contact is Pastor Bharat Kanapathy & Jayamalar Anthony.",
+      note: "Destiny C3 India has multiple locations. The main contact is Pastor Barath & Jayamary.",
       displayCount: 7,
       churches: [
         {
           name: "Destiny C3 India",
           languages: ["English"],
-          pastors: ["Bharat Kanapathy", "Jayamalar Anthony"],
+          pastors: ["Barath", "Jayamary"],
           photo: "assets/img/pastors/bharat_jeyamalar.png",
           address:
             "A Wing, 1st Floor, Ruah Complex, Doddagubi Main Road, Bangalore 560077, Karnataka",
