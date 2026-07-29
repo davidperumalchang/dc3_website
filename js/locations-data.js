@@ -16,7 +16,22 @@ window.DC3_LOCATIONS = {
           name: "Destiny C3 Subang Jaya - Main Church",
           languages: ["English"],
           pastors: ["Clarance Shashi", "Deborah Clarance"],
+          lead: true,
           photo: "assets/img/pastors/clarance_deb.png",
+          address:
+            "S02-06, S02-07 & S02-08, Impian Meridian, USJ 1, Jalan Subang 1, 47500 Subang Jaya",
+          city: "Subang Jaya, Selangor",
+          serviceTimes: ["Sundays · 10:30 AM"],
+          socials: {
+            facebook: "https://www.facebook.com/destinyc3church/",
+            instagram: "https://www.instagram.com/destinyc3/"
+          }
+        },
+        {
+          name: "Destiny C3 Subang Jaya - Main Church",
+          languages: ["English"],
+          pastors: ["Dr Donald De Rozario", "Joan Nunis"],
+          photo: "assets/img/pastors/donald_joan.png",
           address:
             "S02-06, S02-07 & S02-08, Impian Meridian, USJ 1, Jalan Subang 1, 47500 Subang Jaya",
           city: "Subang Jaya, Selangor",

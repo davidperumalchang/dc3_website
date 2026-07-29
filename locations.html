@@ -222,40 +222,39 @@
       </div>
     </section>
 
-    <!-- ============== PASTOR PHOTO LIGHTBOX ============== -->
+    <!-- ============== PASTORAL TEAM MODAL ============== -->
     <div
-      class="modal fade dc3-pastor-modal"
-      id="pastorPhotoModal"
+      class="modal fade dc3-team-pop-modal"
+      id="pastoralTeamModal"
       tabindex="-1"
-      aria-labelledby="pastorPhotoModalTitle"
+      aria-labelledby="pastoralTeamModalTitle"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content dc3-pastor-modal__content">
-          <button
-            type="button"
-            class="dc3-pastor-modal__close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          >
-            <i class="bi bi-x-lg" aria-hidden="true"></i>
-          </button>
-          <div class="dc3-pastor-modal__figure">
-            <img
-              data-pastor-modal-img
-              src=""
-              alt=""
-              class="dc3-pastor-modal__img"
-            />
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content dc3-team-pop">
+          <div class="dc3-team-pop__header">
+            <div class="dc3-team-pop__heading">
+              <p class="dc3-team-pop__eyebrow">Pastoral Team</p>
+              <h2
+                id="pastoralTeamModalTitle"
+                class="dc3-team-pop__title"
+                data-team-modal-title
+              ></h2>
+              <p class="dc3-team-pop__subtitle" data-team-modal-subtitle hidden>
+                <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+                <span></span>
+              </p>
+            </div>
+            <button
+              type="button"
+              class="dc3-team-pop__close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <i class="bi bi-x-lg" aria-hidden="true"></i>
+            </button>
           </div>
-          <div class="dc3-pastor-modal__meta">
-            <h2
-              id="pastorPhotoModalTitle"
-              class="dc3-pastor-modal__title"
-              data-pastor-modal-title
-            ></h2>
-            <p class="dc3-pastor-modal__subtitle" data-pastor-modal-subtitle></p>
-          </div>
+          <div class="dc3-team-pop__body" data-team-modal-body></div>
         </div>
       </div>
     </div>
